@@ -1,6 +1,8 @@
 ## Opdracht 1.2 - Fork je OBA
 
 ## Devices
+![IMG_20200312_122438](https://user-images.githubusercontent.com/8554238/76530786-86df8180-6474-11ea-85f3-bc3ce49ac5f8.jpg)
+
 - ipod touch
     - Safari
     - ios 6.1.6
@@ -68,11 +70,17 @@ Firefox
 3. Kleur uitzetten & kleurenblindheid instellen
     1. ![kleurenblind test](https://user-images.githubusercontent.com/8554238/76526043-387ab480-646d-11ea-9b6c-df5ffd8e70b9.png)
 4. Muis/Trackpad werkt niet
-    1. Firefox pakt niet de articles met a tags
+    1. Firefox pakt niet de articles met a tags, dit blijkt een instelling te zijn die bekend is in de communitie. En het aanpassen hiervan zal alleen maar problemen opleveren, er wordt [geadviseerd](https://stackoverflow.com/questions/49743138/enable-tabbing-through-links-on-page-containing-input-elements) om dit niet aan te passen.
 5. Breedband internet uitzetten
 6. Javascript (volledig)
 7. Cookies niet accepteren & localStorage doet het niet
     1. creëeren van een werkstuk werkt niet meer, het is hier afhankelijk van.
+    
+Verbetering
+- Afbeeldingen een alt text meegeven. Kleinere afbeelding opvragen van de API, in plaats van de grootste/beste versie.
+- Fallback voor custom fonts meegeven.
+- Als er geen javascript is de formulier onder elkaar.
+- Serverside pagina renderen of progressive enhancement toepassen. Dus ervoor zorgen dat de website niet afhankelijk is van Javascript.
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 
