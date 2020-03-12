@@ -1,126 +1,62 @@
-# Browser Technologies @cmda-minor-web 1920
-//Robuuste, toegankelijke websites ontwerpen en maken …
+#Devices
 
-In het vak Browser Technologies leer je hoe je goede, robuuste, toegankelijke websites maakt. Je gaat leren over Progressive Enhancement, Feature Detection en Fallback. Het web is er voor iedereen. In dit vak leer je hoe je daarvoor kan zorgen.
+- ipod touch
+    - Safari
+    - ios 6.1.6
+    - Mozilla/5.0 (Ipod, CPU OS 6_1_6 like Mac OS X)
+    - AppleWebkit/536.26 (KHTML, like Gecko)
+    - Version/6.0 Mobile/10B500 Safari/8536.25
+- Search input auto zoom on safari
+- Laad geen javascript en css
 
-Een van de mooiste principes van het web is dat het er echt is voor iedereen. Iedereen met een computer en een browser moet gebruik kunnen maken van het web. Het web is geen gecontroleerde (programmeer) omgeving. Je kan er gerust van uit gaan dat niemand precies hetzelfde te zien krijgt als wat jij ziet in jouw browser. Er zijn natuurlijk de technische beperkingen. Zoals - Afmetingen van de browser - Grootte van het apparaat - Manier van interactie - Kwaliteit van de hardware - Kwaliteit van het netwerk. En er zijn mensen. Allemaal verschillende mensen ... Hoe zorg je er dan voor dat websites het altijd doen?
+- ipad mini
+    - Safari
+    - ios 9.3.5
+    - Mozilla/5.0 (iPad; CPU OS 9_3_5 like Mac OS X)
+    - AppleWebkit/601.1.46 (KHTML, like Gecko)
+    - Version/9.0 Mobile/13g36 Safari/601.1
 
-## Leerdoelen
-- _Wat is Progressive enhancement en hoe kun je dit toepassen._
-- _Hoe doe je Feature Detection en wat doe je als een techniek niet werkt of wordt ondersteund._
-- _Leren een Browser Technologies onderzoeken, testen en implementeren als enhancement._
+    - Javascript werkt niet.
 
-[Rubric](https://docs.google.com/spreadsheets/d/1MV3BWwwg_Zz1n-S_qOM4iSm4gA4M6g0xAxGacyaPuac/edit?usp=sharing)
+- Nexus 5
+    - Chrome 75
+    - android 6.0.1
+    - Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5)
+    - AppleWebkit/537.36 (KHTML, like Gecko)
+    - Chrome/75.0.3770.143 Mobile Safari/537.36
+- Hoofdfunctionaliteit werken
 
-## Planning
+Safari
 
-| Planning  | Woensdag  |  Donderdag | Vrijdag  |
-|---|---|---|---|
-| <a href=#week-1>Week 1</a>  | Introductie, College over Progressive enhancement + briefing opdracht 1.1 | College Browser detect + presentaties opdracht 1.1 + briefing opdracht 1.2 Fork je OBA  | Feedbackgesprekken + Bowlen! |
-| <a href=#week-2>Week 2</a>  | College Feature detect + Briefing opdracht 2  | College Browsers + werken aan de opdracht | Feedbackgesprekken  |
-| <a href=#week-3>Week 3</a>  | College Notificaties + werken aan de opdracht  |  Werken aan de opdracht | Beoordelingsgesprekken  |
+1. Afbeeldingen uitzetten
+    1. Er gaat niks stuk als de afbeeldingen het niet doen.
+2. Custom fonts uitzetten
+3. Kleur uitzetten & kleurenblindheid instellen
 
+<img width="1165" alt="Screenshot 2020-03-12 at 13 46 26" src="https://user-images.githubusercontent.com/8554238/76526043-387ab480-646d-11ea-9b6c-df5ffd8e70b9.png">
 
+1. Muis/Trackpad werkt niet
+    1. Form input en links werken zonder muis/trackpad, maar de tabs (click) van een werkstuk werkt het niet.
+2. Breedband internet uitzetten
+3. Javascript (volledig)
+    1. Click functies werken niet meer. De html en css werken wel, :target selector doen het ook
+4. Cookies niet accepteren & localStorage doet het niet
+    1. creëeren van een werkstuk werkt niet meer, het is hier afhankelijk van.
+    
+Safari
 
-## Programma
-
-### Week 1
-Het web is voor iedereen. Leren over Progressive enhancement en kennismaken met testen en het device lab. [Planning week 1](./slides/Week1.png)
-
-#### Woensdag
-- [Les 1 - Progressive enhancement & Briefing Opdracht 1.1](./slides/BT1920%20College%20Les1%20-%20Progressive%20Enhancement.pdf)
-- [Opdracht 1.1 - Breek het web](Opdracht1.1.md)
-
-#### Weekly Nerd
-Sanne 't Hooft over Interactie. Woensdag 11 Maart, 16:00 in het minorlokaal.
-
-#### Donderdag
-- [Les 2 - Features testen & Briefing opdracht 1.2](./slides/BT1920%20College%20Les2%20-%20Progressive%20Enhancement.pdf)
-- [Opdracht 1.2 - Fork je OBA](Opdracht1.2.md)
-
-Deze les gaan we onderstaande artikelen bespreken:
-- [Everyone has JavaScript, right? by Stuart Langridge](https://kryogenix.org/code/browser/everyonehasjs.html)
-- [The Web I Want by Chris James](https://dev.to/quii/the-web-i-want-43o)
-
-
-#### Vrijdag
-Feedbackgesprekken opdracht 1.2 in groepjes en studentassistenten en docenten.
-
-Deze les gaan we onderstaand artikel bespreken:
-- [Lezen: Understanding Progressive Enhancement by Aaron Gustafson](https://alistapart.com/article/understandingprogressiveenhancement)
-
-
-
-
-
-### Week 2
-Wat laat je zien als een browser of gebruiker een 'enhancement' niet kan tonen of zien? Hoe doe je Feature Detection en wat doe je als een techniek niet werkt of wordt ondersteund? [Planning week 2](./slides/Week2.png)
-
-#### Woensdag
-- [Les 3 - Over Feature detect & Briefing opdracht 2]()
-- [Opdracht 2 - Progressive Enhanced Browser Technologie](Opdracht2.md)
-
-Deze les gaan we onderstaande artikelen bespreken:
-- [The Role of Enhancement in Web Design by Raluca Budiu / Nielsen Norman Group](https://www.nngroup.com/articles/enhancement/)
-- [Accessibility Through Semantic HTML by Laura Kalbag](https://24ways.org/2017/accessibility-through-semantic-html/)
-
-
-#### Weekly Nerd
-PE bij de Voorhoede.
-
-
-#### Donderdag
-- [Les 4 - Over Browsers]()
-
-Deze les gaan we onderstaande artikelen bespreken:
-- [The accessibility mindset by Eric Eggert](https://24ways.org/2015/the-accessibility-mindset/)
-- [HTML: The Inaccessible Parts](https://daverupert.com/2020/02/html-the-inaccessible-parts/)
-
-
-#### Vrijdag
-Code review en feedbackgesprekken opdracht 2.
-
-
-
-
-### Week 3
-Deze week werken we verder aan opdracht 2. [Planning week 3](./slides/Week3.png)
-
-
-#### Woensdag
-- [Les 5 - Over Notificaties]()
-
-Deze les gaan we onderstaande artikelen bespreken:
-- [Progressive Enhancement and Data Visualizations by Chris Coyier](https://css-tricks.com/progressive-enhancement-data-visualizations/)
-- [Make the Web Work For Everyone by Justin Crawford, Chris Mills, Ali Spivak](https://hacks.mozilla.org/2016/07/make-the-web-work-for-everyone/)
-
-
-#### Weekly Nerd
-Op bezoek bij Bol.com
-
-
-#### Donderdag
-Verder werken aan opdracht 2
-
-
-
-#### Vrijdag
-Code review en beoordelingsgesprekken opdracht 2.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+1. Afbeeldingen uitzetten
+    1. Alle afbeeldingen van boeken gaan weg, maar 1 blijft gewoon staan.
+2. Custom fonts uitzetten
+3. Kleur uitzetten & kleurenblindheid instellen
+<img width="1165" alt="Screenshot 2020-03-12 at 13 46 26" src="https://user-images.githubusercontent.com/8554238/76526043-387ab480-646d-11ea-9b6c-df5ffd8e70b9.png">
+4. Muis/Trackpad werkt niet
+    1. Form input en links werken zonder muis/trackpad, maar de tabs (click) van een werkstuk werkt het niet.
+5. Breedband internet uitzetten
+6. Javascript (volledig)
+    1. Click functies werken niet meer. De html en css werken wel, :target selector doen het ook
+7. Cookies niet accepteren & localStorage doet het niet
+    1. creëeren van een werkstuk werkt niet meer, het is hier afhankelijk van.
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 
