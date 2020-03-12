@@ -61,7 +61,7 @@
 7. Cookies niet accepteren & localStorage doet het niet
     1. creëeren van een werkstuk werkt niet meer, het is hier afhankelijk van.
 
-Firefox
+### Firefox
 
 1. Afbeeldingen uitzetten
     1. Er zijn geen problemen ondervonden tijdens het uitschakelen van de afbeeldingen.
@@ -76,11 +76,19 @@ Firefox
 7. Cookies niet accepteren & localStorage doet het niet
     1. creëeren van een werkstuk werkt niet meer, het is hier afhankelijk van.
     
-Verbetering
+## Screenreaders
+<img width="1440" alt="Screenshot 2020-03-12 at 15 32 32" src="https://user-images.githubusercontent.com/8554238/76533287-1dfa0880-6478-11ea-95a7-486a52c9d1e3.png">
+
+Over het algemeen doet de screenreader redelijk, alleen ik merk dat de benamingen van knoppen en groter rol speelde dan ik had gedacht. "+ bronnenlijst" wordt letterlijk gelezen als "plus bronnenlijst", het was in eerste instantie een hack om ervoor te zorgen dat de buttons niet "afbraken" zoals je hieronder kunt zien. Maar achteraf gezien is dit een slechte manier van denken.
+
+<img width="147" alt="Screenshot 2020-03-12 at 15 38 16" src="https://user-images.githubusercontent.com/8554238/76532902-901e1d80-6477-11ea-9060-afc431f40700.png">
+ 
+## Verbetering
 - Afbeeldingen een alt text meegeven. Kleinere afbeelding opvragen van de API, in plaats van de grootste/beste versie.
 - Fallback voor custom fonts meegeven.
 - Als er geen javascript is de formulier onder elkaar.
 - Serverside pagina renderen of progressive enhancement toepassen. Dus ervoor zorgen dat de website niet afhankelijk is van Javascript.
+- Betere benaming van functies, i.p.v "+ bronnenlijst" gewoon  "toevoegen aan bronnenlijst".
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 
