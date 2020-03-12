@@ -1,4 +1,4 @@
-#Devices
+# Devices
 
 - ipod touch
     - Safari
@@ -30,17 +30,15 @@ Safari
 
 1. Afbeeldingen uitzetten
     1. Er gaat niks stuk als de afbeeldingen het niet doen.
-2. Custom fonts uitzetten
-3. Kleur uitzetten & kleurenblindheid instellen
-
-<img width="1165" alt="Screenshot 2020-03-12 at 13 46 26" src="https://user-images.githubusercontent.com/8554238/76526043-387ab480-646d-11ea-9b6c-df5ffd8e70b9.png">
-
+1. Custom fonts uitzetten
+1. Kleur uitzetten & kleurenblindheid instellen
+    1. ![kleurenblind test](https://user-images.githubusercontent.com/8554238/76526043-387ab480-646d-11ea-9b6c-df5ffd8e70b9.png)
 1. Muis/Trackpad werkt niet
     1. Form input en links werken zonder muis/trackpad, maar de tabs (click) van een werkstuk werkt het niet.
-2. Breedband internet uitzetten
-3. Javascript (volledig)
+1. Breedband internet uitzetten
+1. Javascript (volledig)
     1. Click functies werken niet meer. De html en css werken wel, :target selector doen het ook
-4. Cookies niet accepteren & localStorage doet het niet
+1. Cookies niet accepteren & localStorage doet het niet
     1. creëeren van een werkstuk werkt niet meer, het is hier afhankelijk van.
     
 Safari
@@ -49,7 +47,7 @@ Safari
     1. Alle afbeeldingen van boeken gaan weg, maar 1 blijft gewoon staan.
 2. Custom fonts uitzetten
 3. Kleur uitzetten & kleurenblindheid instellen
-<img width="1165" alt="Screenshot 2020-03-12 at 13 46 26" src="https://user-images.githubusercontent.com/8554238/76526043-387ab480-646d-11ea-9b6c-df5ffd8e70b9.png">
+![kleurenblind test](https://user-images.githubusercontent.com/8554238/76526043-387ab480-646d-11ea-9b6c-df5ffd8e70b9.png)
 4. Muis/Trackpad werkt niet
     1. Form input en links werken zonder muis/trackpad, maar de tabs (click) van een werkstuk werkt het niet.
 5. Breedband internet uitzetten
