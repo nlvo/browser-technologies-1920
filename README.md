@@ -1,4 +1,6 @@
 # Opdracht 1.2 - Fork je OBA
+De opdracht was om je OBA applicatie te testen en te leren over Progressive Enhancement, Feature Detection en Fallback. En hoe je een toegankelijke website maakt. 
+> Het web is namelijk voor iedereen.
 
 ## Features
 1. Afbeeldingen uitzetten
@@ -45,26 +47,35 @@ Om te beginnen heb ik bij het uitzetten/instellen van de onderstaande functies
 1. Custom fonts uitzetten
 1. Kleur uitzetten & kleurenblindheid instellen
 vrijwel geen tot amper problemen ondervonden.
-1. Breedband internet
 
 ### Afbeeldingen uitzetten
 Er zijn geen problemen ondervonden tijdens het uitschakelen van de afbeeldingen. Wel ben ik de alt vergeten wat super belangrijk is voor deze applicatie, want het zijn afbeeldingen van boeken!
+<img width="1439" alt="Screenshot 2020-03-13 at 13 37 36" src="https://user-images.githubusercontent.com/8554238/76622026-f4e97e80-6530-11ea-8175-d91f47257602.png">
 
 ### Kleur uitzetten & kleurenblindheid instellen
 Ik houd er vaak al rekening mee, maar het kan wel wat "strenger" naar mijn mening. Contrast is iets wat ik vaak als ontwerper in me achterhoofd hou, maar toch iets lastig blijf. Over het algemeen ziet het er prima uit, maar zal ik wat voorzichtiger zijn met de lichte grijstinten.
 ![kleurenblind test](https://user-images.githubusercontent.com/8554238/76526043-387ab480-646d-11ea-9b6c-df5ffd8e70b9.png)
+<img width="1187" alt="Screenshot 2020-03-13 at 13 23 03" src="https://user-images.githubusercontent.com/8554238/76622031-f5821500-6530-11ea-88a4-81367b628dec.png">
 
 ### Custom fonts uitzetten
 Mijn vuistregel is altijd maximaal 2 verschillende fonts, liefst 1. En ik heb eigenlijk geen probleem ondervonden met custom fonts, want OBA maakt gebruik van Arial dit zit geloof ik als default op computers. Daarnaast maak ik gebruik van een aantal fallbacks.
 
+Hieronder zijn een aantal functies die vrijwel op elke browser het zelfde reageerd.
+1. Breedband internet
+1. Javascript (volledig)
+
 ### Breedband internet
 De afbeelingen zijn niet heel groot, maar er is wel een kleinere versie beschikbaar om te gebruiken als thumbnail. Dit is iets waar ik volgende keer wel langer bij stil zal staan. Verder laad de pagina redelijk, je ziet wel de afbeelding rustig inladen.
+
+### 1. Javascript (volledig)
+Click functies werken niet meer. De html en css werken wel. :target selector doen het ook, waardoor je toch kunt navigeren naar een andere pagina.
+<img width="1440" alt="Screenshot 2020-03-13 at 13 38 06" src="https://user-images.githubusercontent.com/8554238/76622017-f1ee8e00-6530-11ea-895b-e77ee618d171.png">
+
+## Verschillen per browsers
 
 ### Chrome
 1. Muis/Trackpad werkt niet
     1. Form input en links werken zonder muis/trackpad, maar de tabs (click) van een werkstuk werkt het niet.
-1. Javascript (volledig)
-    1. Click functies werken niet meer. De html en css werken wel, :target selector doen het ook
 1. Cookies niet accepteren & localStorage doet het niet
     1.  Het creëeren van een werkstuk werkte niet meer, wij maakten gebruik van de localstorage om de ergens data op te slaan waardoor dit dus niet meer zal werken.
     
@@ -73,8 +84,6 @@ De afbeelingen zijn niet heel groot, maar er is wel een kleinere versie beschikb
     1. Alle afbeeldingen van boeken gaan weg, maar 1 blijft gewoon staan.
 1. Muis/Trackpad werkt niet
     1. Pakt alleen inputs, maar geen a tags
-1. Javascript (volledig)
-    1. Click functies werken niet meer. De html en css werken wel, :target selector doen het ook
 1. Cookies niet accepteren & localStorage doet het niet
     1.  Het creëeren van een werkstuk werkte niet meer, wij maakten gebruik van de localstorage om de ergens data op te slaan waardoor dit dus niet meer zal werken.
 
@@ -82,7 +91,6 @@ De afbeelingen zijn niet heel groot, maar er is wel een kleinere versie beschikb
 
 1. Muis/Trackpad werkt niet
     1. Firefox pakt niet de articles met a tags, dit blijkt een instelling te zijn die bekend is in de communitie. En het aanpassen hiervan zal alleen maar problemen opleveren, er wordt [geadviseerd](https://stackoverflow.com/questions/49743138/enable-tabbing-through-links-on-page-containing-input-elements) om dit niet aan te passen.
-1. Javascript (volledig)
 1. Cookies niet accepteren & localStorage doet het niet
     1. Het creëeren van een werkstuk werkte niet meer, wij maakten gebruik van de localstorage om de ergens data op te slaan waardoor dit dus niet meer zal werken.
     
