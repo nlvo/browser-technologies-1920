@@ -102,11 +102,13 @@ Over het algemeen doet de screenreader redelijk, alleen ik merk dat de benaminge
 <img width="147" alt="Screenshot 2020-03-12 at 15 38 16" src="https://user-images.githubusercontent.com/8554238/76532902-901e1d80-6477-11ea-9060-afc431f40700.png">
 
 ## Verbetering
+Wat zou verbeteren aan mijn applicatie:
 - Afbeeldingen een alt text meegeven. Kleinere afbeelding opvragen van de API, in plaats van de grootste/beste versie.
 - Als er geen javascript is de formulier onder elkaar.
 - Serverside pagina renderen of progressive enhancement toepassen. Dus ervoor zorgen dat de website niet volledig afhankelijk is van Javascript.
 - Zoekfunctie/formulier zou ook moeten werken zonder Javascript.
 - Betere benaming van functies, i.p.v "+ bronnenlijst" gewoon  "toevoegen aan bronnenlijst".
+De verbeteringen heb ik uit de uitleg van [Progressive Enhancement](https://github.com/cmda-minor-web/browser-technologies-1920/blob/master/slides/BT1920%20College%20Les2%20-%20Progressive%20Enhancement.pdf) gehaald. 
 
 ## Conclusie
 Over het algemeen zijn er geen grote problemen ondervonden, alhoewel de pagina's op dit moment clientside gerenderd worden. Maar naast dat gaan er niet heel veel dingen mis, tot mijn verbazing. De browsers waar ik het getest had reageerden over het algemeen vrij het zelfde. Maar zou ik wel wat dingen anders doen oftewel beter doen.
