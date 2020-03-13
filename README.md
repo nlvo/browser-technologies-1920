@@ -60,7 +60,7 @@ Ik houd er vaak al rekening mee, maar het kan wel wat "strenger" naar mijn menin
 ### Custom fonts uitzetten
 Mijn vuistregel is altijd maximaal 2 verschillende fonts, liefst 1. En ik heb eigenlijk geen probleem ondervonden met custom fonts, want OBA maakt gebruik van Arial dit zit geloof ik als default op computers. Daarnaast maak ik gebruik van een aantal fallbacks.
 
-Hieronder zijn een aantal functies die vrijwel op elke browser het zelfde reageerd.
+Hieronder zijn een aantal functies die vrijwel op elke browser het zelfde reageren.
 1. Breedband internet
 1. Javascript (volledig)
 
