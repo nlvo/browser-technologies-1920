@@ -1,4 +1,13 @@
-## Opdracht 1.2 - Fork je OBA
+# Opdracht 1.2 - Fork je OBA
+
+## Features
+1. Afbeeldingen uitzetten
+1. Custom fonts uitzetten
+1. Kleur uitzetten & kleurenblindheid instellen
+1. Muis/Trackpad werkt niet
+1. Breedband internet
+1. Javascript (volledig)
+1. Cookies niet accepteren & localStorage doet het niet
 
 ## Devices
 ![IMG_20200312_122438](https://user-images.githubusercontent.com/8554238/76530786-86df8180-6474-11ea-85f3-bc3ce49ac5f8.jpg)
@@ -10,7 +19,7 @@
     - AppleWebkit/536.26 (KHTML, like Gecko)
     - Version/6.0 Mobile/10B500 Safari/8536.25
 - Search input auto zoom on safari
-- Laad geen javascript en css
+- De Javascript en CSS werden niet ingeladen, waardoor alleen de HTML achterbleef. Gelukkig is de HTML semantisch, maar de zoekfunctie was helaas met Javascript. En werkte die niet.
 
 - ipad mini
     - Safari
@@ -19,7 +28,7 @@
     - AppleWebkit/601.1.46 (KHTML, like Gecko)
     - Version/9.0 Mobile/13g36 Safari/601.1
 
-    - Javascript werkt niet.
+    - De javascript werkte niet/niet helemaal op de ipad mini. De data die ik ophaal met behulp van de fetch, deed het in ieder geval niet.
 
 - Nexus 5
     - Chrome 75
@@ -27,54 +36,55 @@
     - Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5)
     - AppleWebkit/537.36 (KHTML, like Gecko)
     - Chrome/75.0.3770.143 Mobile Safari/537.36
-- Hoofdfunctionaliteit werken
+- Vrijwel alle hoofdfunctionaliteiten van de applicatie werkten prima, dus het ophalen van de data. Het is ook niet zo'n oude telefoon dus is het geen verassing dat het hier prima werkt.
 
 ## Browsers
 
-### Chrome
+Om te beginnen heb ik bij het uitzetten/instellen van de onderstaande functies
 1. Afbeeldingen uitzetten
-    1. Er zijn geen problemen ondervonden tijdens het uitschakelen van de afbeeldingen.
 1. Custom fonts uitzetten
-    1. Er zijn geen problemen ondervonden tijdens het uitschakelen van de custom fonts.
 1. Kleur uitzetten & kleurenblindheid instellen
-    1. ![kleurenblind test](https://user-images.githubusercontent.com/8554238/76526043-387ab480-646d-11ea-9b6c-df5ffd8e70b9.png)
+vrijwel geen tot amper problemen ondervonden.
+1. Breedband internet
+
+### Afbeeldingen uitzetten
+Er zijn geen problemen ondervonden tijdens het uitschakelen van de afbeeldingen. Wel ben ik de alt vergeten wat super belangrijk is voor deze applicatie, want het zijn afbeeldingen van boeken!
+
+### Kleur uitzetten & kleurenblindheid instellen
+Ik houd er vaak al rekening mee, maar het kan wel wat "strenger" naar mijn mening. Contrast is iets wat ik vaak als ontwerper in me achterhoofd hou, maar toch iets lastig blijf. Over het algemeen ziet het er prima uit, maar zal ik wat voorzichtiger zijn met de lichte grijstinten.
+![kleurenblind test](https://user-images.githubusercontent.com/8554238/76526043-387ab480-646d-11ea-9b6c-df5ffd8e70b9.png)
+
+### Custom fonts uitzetten
+Mijn vuistregel is altijd maximaal 2 verschillende fonts, liefst 1. En ik heb eigenlijk geen probleem ondervonden met custom fonts, want OBA maakt gebruik van Arial dit zit geloof ik als default op computers. Daarnaast maak ik gebruik van een aantal fallbacks.
+
+### Breedband internet
+De afbeelingen zijn niet heel groot, maar er is wel een kleinere versie beschikbaar om te gebruiken als thumbnail. Dit is iets waar ik volgende keer wel langer bij stil zal staan. Verder laad de pagina redelijk, je ziet wel de afbeelding rustig inladen.
+
+### Chrome
 1. Muis/Trackpad werkt niet
     1. Form input en links werken zonder muis/trackpad, maar de tabs (click) van een werkstuk werkt het niet.
-1. Breedband internet uitzetten
 1. Javascript (volledig)
     1. Click functies werken niet meer. De html en css werken wel, :target selector doen het ook
 1. Cookies niet accepteren & localStorage doet het niet
-    1. creëeren van een werkstuk werkt niet meer, het is hier afhankelijk van.
+    1.  Het creëeren van een werkstuk werkte niet meer, wij maakten gebruik van de localstorage om de ergens data op te slaan waardoor dit dus niet meer zal werken.
     
 ### Safari
 1. Afbeeldingen uitzetten
     1. Alle afbeeldingen van boeken gaan weg, maar 1 blijft gewoon staan.
-2. Custom fonts uitzetten
-    1. Er zijn geen problemen ondervonden tijdens het uitschakelen van de afbeeldingen.
-3. Kleur uitzetten & kleurenblindheid instellen
-    1. ![kleurenblind test](https://user-images.githubusercontent.com/8554238/76526043-387ab480-646d-11ea-9b6c-df5ffd8e70b9.png)
-4. Muis/Trackpad werkt niet
+1. Muis/Trackpad werkt niet
     1. Pakt alleen inputs, maar geen a tags
-5. Breedband internet uitzetten
-6. Javascript (volledig)
+1. Javascript (volledig)
     1. Click functies werken niet meer. De html en css werken wel, :target selector doen het ook
-7. Cookies niet accepteren & localStorage doet het niet
-    1. creëeren van een werkstuk werkt niet meer, het is hier afhankelijk van.
+1. Cookies niet accepteren & localStorage doet het niet
+    1.  Het creëeren van een werkstuk werkte niet meer, wij maakten gebruik van de localstorage om de ergens data op te slaan waardoor dit dus niet meer zal werken.
 
 ### Firefox
 
-1. Afbeeldingen uitzetten
-    1. Er zijn geen problemen ondervonden tijdens het uitschakelen van de afbeeldingen.
-2. Custom fonts uitzetten
-    1. Er zijn geen problemen ondervonden tijdens het uitschakelen van de custom fonts.
-3. Kleur uitzetten & kleurenblindheid instellen
-    1. ![kleurenblind test](https://user-images.githubusercontent.com/8554238/76526043-387ab480-646d-11ea-9b6c-df5ffd8e70b9.png)
-4. Muis/Trackpad werkt niet
+1. Muis/Trackpad werkt niet
     1. Firefox pakt niet de articles met a tags, dit blijkt een instelling te zijn die bekend is in de communitie. En het aanpassen hiervan zal alleen maar problemen opleveren, er wordt [geadviseerd](https://stackoverflow.com/questions/49743138/enable-tabbing-through-links-on-page-containing-input-elements) om dit niet aan te passen.
-5. Breedband internet uitzetten
-6. Javascript (volledig)
-7. Cookies niet accepteren & localStorage doet het niet
-    1. creëeren van een werkstuk werkt niet meer, het is hier afhankelijk van.
+1. Javascript (volledig)
+1. Cookies niet accepteren & localStorage doet het niet
+    1. Het creëeren van een werkstuk werkte niet meer, wij maakten gebruik van de localstorage om de ergens data op te slaan waardoor dit dus niet meer zal werken.
     
 ## Screenreaders
 <img width="1440" alt="Screenshot 2020-03-12 at 15 32 32" src="https://user-images.githubusercontent.com/8554238/76533287-1dfa0880-6478-11ea-95a7-486a52c9d1e3.png">
@@ -82,13 +92,18 @@
 Over het algemeen doet de screenreader redelijk, alleen ik merk dat de benamingen van knoppen en groter rol speelde dan ik had gedacht. "+ bronnenlijst" wordt letterlijk gelezen als "plus bronnenlijst", het was in eerste instantie een hack om ervoor te zorgen dat de buttons niet "afbraken" zoals je hieronder kunt zien. Maar achteraf gezien is dit een slechte manier van denken.
 
 <img width="147" alt="Screenshot 2020-03-12 at 15 38 16" src="https://user-images.githubusercontent.com/8554238/76532902-901e1d80-6477-11ea-9060-afc431f40700.png">
- 
+
 ## Verbetering
 - Afbeeldingen een alt text meegeven. Kleinere afbeelding opvragen van de API, in plaats van de grootste/beste versie.
-- Fallback voor custom fonts meegeven.
 - Als er geen javascript is de formulier onder elkaar.
-- Serverside pagina renderen of progressive enhancement toepassen. Dus ervoor zorgen dat de website niet afhankelijk is van Javascript.
+- Serverside pagina renderen of progressive enhancement toepassen. Dus ervoor zorgen dat de website niet volledig afhankelijk is van Javascript.
+- Zoekfunctie/formulier zou ook moeten werken zonder Javascript.
 - Betere benaming van functies, i.p.v "+ bronnenlijst" gewoon  "toevoegen aan bronnenlijst".
+
+## Conclusie
+Over het algemeen zijn er geen grote problemen ondervonden, alhoewel de pagina's op dit moment clientside gerenderd worden. Maar naast dat gaan er niet heel veel dingen mis, tot mijn verbazing. De browsers waar ik het getest had reageerden over het algemeen vrij het zelfde.
+
+Wel was het best apart/lastig om de screenreader aan de praat te krijgen. Meer in de zin van 1 ik had geen idee waar die zat (wel eens perongeluk geactiveerd door een verkeerde command, oops 😅), maar geen idee ook hoe ik die werkt (de commands).
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 
