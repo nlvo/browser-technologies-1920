@@ -109,9 +109,9 @@ Over het algemeen doet de screenreader redelijk, alleen ik merk dat de benaminge
 - Betere benaming van functies, i.p.v "+ bronnenlijst" gewoon  "toevoegen aan bronnenlijst".
 
 ## Conclusie
-Over het algemeen zijn er geen grote problemen ondervonden, alhoewel de pagina's op dit moment clientside gerenderd worden. Maar naast dat gaan er niet heel veel dingen mis, tot mijn verbazing. De browsers waar ik het getest had reageerden over het algemeen vrij het zelfde.
+Over het algemeen zijn er geen grote problemen ondervonden, alhoewel de pagina's op dit moment clientside gerenderd worden. Maar naast dat gaan er niet heel veel dingen mis, tot mijn verbazing. De browsers waar ik het getest had reageerden over het algemeen vrij het zelfde. Maar zou ik wel wat dingen anders doen oftewel beter doen.
 
-Wel was het best apart/lastig om de screenreader aan de praat te krijgen. Meer in de zin van 1 ik had geen idee waar die zat (wel eens perongeluk geactiveerd door een verkeerde command, oops 😅), maar geen idee ook hoe ik die werkt (de commands).
+Wel was het best apart/lastig om de screenreader aan de praat te krijgen. Meer in de zin van 1 ik had geen idee waar die zat (wel eens perongeluk geactiveerd door een verkeerde command, oops 😅), maar geen idee hoe het werkt (de commands).
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 
