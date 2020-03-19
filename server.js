@@ -26,11 +26,28 @@ app
     .get('/', function(req, res){
         res.render('form', { data: results })
     })
+    .get('/search', function(req, res){
+        res.render('search');
+    })
+    .get('/pin', function(req, res){
+        const pin = Number(req.query.pinNumber);
+        
+        db.collection('designs').findOne({
+            pin: pin
+        }, done);
+
+        function done (error, result) {
+            console.log(result)
+            if (error) return console.log(error);
+            res.redirect('/design/' + result._id)
+        }
+    })
     .get('/design/:id', function(req, res){
         const id = req.params.id;
         db.collection('designs').findOne({
-            pin: id
+			_id: mongo.ObjectID(id)
         }, done);
+
         function done (error, result) {
             if (error) return console.log(error);
             res.render('index', { data: result })
@@ -55,15 +72,8 @@ app
         }, done)
 
         function done (error, result) {
-            console.log(result)
             if (error) return console.log(error);
-            res.redirect('/design/' + result.pin)
+            res.redirect('/design/' + result.insertedId)
         }
     })
     .listen(port);
-
-    // req.body, (error, result) => {
-    //     result.pin = Number(id);
-    //     if (error) return console.log(error);
-    //     res.redirect('/design/' + result.pin)
-    // }
