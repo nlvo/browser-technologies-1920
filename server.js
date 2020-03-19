@@ -30,14 +30,13 @@ app
         res.render('search');
     })
     .get('/pin', function(req, res){
-        const pin = Number(req.query.pinNumber);
+        const pinValue = Number(req.query.pinNumber);
         
         db.collection('designs').findOne({
-            pin: pin
+            pin: pinValue
         }, done);
 
         function done (error, result) {
-            console.log(result)
             if (error) return console.log(error);
             res.redirect('/design/' + result._id)
         }
@@ -58,7 +57,7 @@ app
             length: 6,
             useLetters: false
         });
-        
+
         db.collection('designs').insertOne({
             pin: Number(pinNumber),
             type: req.body.type,
@@ -74,6 +73,41 @@ app
         function done (error, result) {
             if (error) return console.log(error);
             res.redirect('/design/' + result.insertedId)
+            // res.render('index', { data: req.query })
+        }
+    })
+    .post('/form/:id', function (req, res){
+        const id = req.params.id;
+		db.collection('designs').update({
+            _id: mongo.ObjectID(id)},
+                { $set: {
+                    type: req.body.type,
+                    size: req.body.size,
+                    color: req.body.color,
+                    textColor: req.body.textColor,
+                    firstLanguage: req.body.firstLanguage,
+                    secondLanguage: req.body.secondLanguage,
+                    thirdLanguage: req.body.thirdLanguage,
+                    fourthLanguage: req.body.fourthLanguage
+                }},    
+                { upsert: true },
+            done);
+
+        function done (error, result) {
+            if (error) return console.log(error);
+            res.redirect('/design/' + id)
+        }
+    })
+    .get('/form/:id', function(req, res){
+        const id = req.params.id;
+
+        db.collection('designs').findOne({
+			_id: mongo.ObjectID(id)
+        }, done);
+
+        function done (error, result) {
+            if (error) return console.log(error);
+            res.render('form', { data: result })
         }
     })
     .listen(port);

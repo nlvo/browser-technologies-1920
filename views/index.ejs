@@ -7,7 +7,6 @@
     <title>Form</title>
 </head>
 <body>
-
     <article>
         <p>Je hebt gekozen voor een <%= data.type %> tshirt in de maat <%= data.size %>.
             Het is een <%= data.color %> tshirt, met <%= data.textColor %> tekst. En staat</p>
@@ -19,5 +18,7 @@
             <li><%= data.fourthLanguage %></li>
         </ul>
     </article>
+    <%= data.pin %>
+    <a href="/form/<%= data._id %>">aanpassen</a>
 </body>
 </html>

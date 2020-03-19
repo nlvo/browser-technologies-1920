@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Ontwerp je T-Shirt</h1>
-    <form action="/form">
+    <form action="/form/<%= data._id %>" method="POST">
         <section>
             <fieldset>
                 <legend>Wat voor shirt wil je?</legend>
@@ -21,6 +21,7 @@
             <fieldset>
                 <legend>Wat is je maat?</legend>
                 <select name="size" id="size">
+                    <option value="<%= data.size %>" name="extra-small"><%= data.size %></option>
                     <option value="xs" name="extra-small">xs</option>
                     <option value="s" name="small">s</option>
                     <option value="m" name="medium">m</option>
@@ -64,24 +65,24 @@
                 <legend>Wat voor programmeertaal spreek je?</legend>
 
                 <label for="first-language">Eerste Taal</label>
-                <input type="text" id="first-language" name="firstLanguage">
+                <input type="text" id="first-language" name="firstLanguage" value="<%= data.firstLanguage %>">
                 <label for="firstLanguageRange">Hoe goed spreek je de taal in percentage.</label>
-                <input type="range" name="firstLanguageRange" value="">
+                <input type="range" name="firstLanguageRange">
 
                 <label for="second-language">Tweede Taal</label>
-                <input type="text"  id="second-language"  name="secondLanguage">
+                <input type="text"  id="second-language"  name="secondLanguage" value="<%= data.secondLanguage %>">
                 <label for="secondLanguageRange">Hoe goed spreek je de taal in percentage.</label>
-                <input type="range" name="secondLanguageRange" value="">
+                <input type="range" name="secondLanguageRange">
 
                 <label for="third-language">Derde Taal</label>
-                <input type="text" id="third-language" name="thirdLanguage">
+                <input type="text" id="third-language" name="thirdLanguage" value="<%= data.thirdLanguage %>">
                 <label for="thirdLanguageRange">Hoe goed spreek je de taal in percentage.</label>
-                <input type="range" name="thirdLanguageRange" value="">
+                <input type="range" name="thirdLanguageRange">
 
                 <label for="fourth-language">Vierde Taal</label>
-                <input type="text"  id="fourth-language"  name="fourthLanguage">
+                <input type="text"  id="fourth-language"  name="fourthLanguage" value="<%= data.fourthLanguage %>">
                 <label for="fourthLanguageRange">Hoe goed spreek je de taal in percentage.</label>
-                <input type="range" name="fourthLanguageRange" value="">
+                <input type="range" name="fourthLanguageRange">
             </fieldset>
         </section>
         <button>Opslaan</button>
