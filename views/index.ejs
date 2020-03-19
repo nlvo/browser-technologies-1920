@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Form</title>
 </head>
 <body>
     <article>
         <p>Je hebt gekozen voor een <%= data.type %> tshirt in de maat <%= data.size %>.
-            Het is een <%= data.color %> tshirt, met <%= data.textColor %> tekst. En staat</p>
+            Het is een <%= data.color %> tshirt, met <%= data.textColor %> tekst. Waarop staat</p>
         <h1>I speak</h1>
         <ul>
             <li><%= data.firstLanguage %></li>
@@ -18,7 +19,10 @@
             <li><%= data.fourthLanguage %></li>
         </ul>
     </article>
-    <%= data.pin %>
-    <a href="/form/<%= data._id %>">aanpassen</a>
+    <p>Kopieer de code: <%= data.pin %></p>
+    <p>Of bookmark de url</p>
+    <a class="btn" href="/form/<%= data._id %>">Aanpassen</a>
+    <a class="btn" href="">Print</a>
+    <a class="btn btn--order" href="">Bestellen</a>
 </body>
 </html>

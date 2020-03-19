@@ -24,7 +24,7 @@ app
     .use(express.static('public'))
     .set('view engine', 'ejs')
     .get('/', function(req, res){
-        res.render('form', { data: results })
+        res.render('form')
     })
     .get('/search', function(req, res){
         res.render('search');

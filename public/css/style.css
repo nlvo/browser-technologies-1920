@@ -1,0 +1,198 @@
+body {
+    background-color: #CBD5E0;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+button {
+    background-color: #38B2AC;
+    border-radius: 2px;
+    color: #E6FFFA;
+    font-size: 1em;
+    padding: 0.625em 1em;
+}
+
+.btn {
+    border: 2px solid #38B2AC;
+    border-radius: 2px;
+    color: #38B2AC;
+    font-size: 1em;
+    padding: 0.625em 1em;
+    text-decoration: none;
+}
+
+.btn.btn--order {
+    background-color: #38B2AC;
+    border-radius: 2px;
+    color: #E6FFFA;
+    font-size: 1em;
+    padding: 0.625em 1em;
+    text-decoration: none;
+}
+
+form section {
+    position: relative;
+    width: 45%;
+}
+
+form section:first-of-type::before {
+    content: '';
+    width: 42.4%;
+    height: 0;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0 100px 60px 100px;
+    border-color: transparent transparent #fff transparent;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -58.4px;
+}
+
+form section:first-of-type {
+    background-color: #fff;
+    border-radius: 2px;
+    float: left;
+    width: 30%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+form section:last-of-type {
+    float: right;
+    position: relative;
+}
+
+form section:last-of-type fieldset {
+    margin: 6em auto;
+    width: 50%;
+}
+
+form section:last-of-type fieldset label {
+    margin: 0 auto;
+    width: 50%;
+}
+
+form section:last-of-type label {
+    display: block;
+}
+
+form {
+    margin: 0 auto;
+    width: 80%;
+}
+
+form fieldset {
+    margin-top: 2em;
+    border: none;
+}
+
+form label {
+    display: inline-block;
+    padding: .625em;
+}
+
+form label input {
+    margin: 1em 0;
+    padding: .625em;
+}
+
+form label input {
+    display: block;
+    position: relative;
+}
+
+form label input[type="radio"] {
+    margin: 1em auto;
+    width: 3em;
+}
+
+form label input:before {
+    content: '';    
+    border-radius: 2px;
+    display: block;
+    height: 3em;
+    /* left: -1.5em; */
+    position: absolute;
+    top: -1.5em;
+    width: 3em;
+}
+
+form label #red:before,
+form label #red-shirt:before {
+    background-color: #F56565;
+}
+
+form label #orange:before,
+form label #orange-shirt:before {
+    background-color: #ED8936;
+}
+
+form label #yellow:before,
+form label #yellow-shirt:before {
+    background-color: #ECC94B;
+}
+
+form label #green:before,
+form label #green-shirt:before {   
+    background-color: #48BB78;
+}
+
+form label #blue:before,
+form label #blue-shirt:before {  
+    background-color: #4299E1;
+}
+
+form label #dark-grey:before,
+form label #dark-grey-shirt:before {
+    background-color: #2D3748;
+}
+
+form label #red:focus:before,
+form label #red-shirt:focus:before {
+    box-shadow: 0 0 0 3px rgba(56,178,172,.5)!important;
+}
+
+form label #orange:focus:before,
+form label #orange-shirt:focus:before {
+    box-shadow: 0 0 0 3px rgba(56,178,172,.5)!important;
+}
+
+form label #yellow:focus:before,
+form label #yellow-shirt:focus:before {
+    box-shadow: 0 0 0 3px rgba(56,178,172,.5)!important;
+}
+
+form label #green:focus:before,
+form label #green-shirt:focus:before {   
+    box-shadow: 0 0 0 3px rgba(56,178,172,.5)!important;
+}
+
+form label #blue:focus:before,
+form label #blue-shirt:focus:before {  
+    box-shadow: 0 0 0 3px rgba(56,178,172,.5)!important;
+}
+
+form label #dark-grey:focus:before,
+form label #dark-grey-shirt:focus:before {
+    box-shadow: 0 0 0 3px rgba(56,178,172,.5)!important;
+}
+
+form label input[type="text"],
+form label input[type="range"] {
+    display: block;
+}
+
+form label input[type="range"] {
+    padding: 1em;
+}
