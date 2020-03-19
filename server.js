@@ -4,12 +4,12 @@ const generateUniqueId = require('generate-unique-id');
 require('dotenv').config();
 
 const app = express();
-const port = process.env.DB_PORT;
+const port = process.env.PORT;
 let db = null;
 const dbName = process.env.DB_NAME;
 const url = process.env.DB_URL;
 
-mongo.MongoClient.connect(url , (err, database) => {
+mongo.MongoClient.connect(url , {useNewUrlParser: true, useUnifiedTopology: true}, (err, database) => {
     if (err) {
 		throw err
 	} else {
