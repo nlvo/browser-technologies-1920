@@ -4,7 +4,7 @@ const generateUniqueId = require('generate-unique-id');
 require('dotenv').config();
 
 const app = express();
-const port = 4000;
+const port = process.env.DB_PORT;
 let db = null;
 const dbName = process.env.DB_NAME;
 const url = process.env.DB_URL;
