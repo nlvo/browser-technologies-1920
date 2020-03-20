@@ -8,21 +8,40 @@
     <title>Form</title>
 </head>
 <body>
-    <article>
-        <p>Je hebt gekozen voor een <%= data.type %> tshirt in de maat <%= data.size %>.
-            Het is een <%= data.color %> tshirt, met <%= data.textColor %> tekst. Waarop staat</p>
-        <h1>I speak</h1>
+    <nav>
         <ul>
-            <li><%= data.firstLanguage %></li>
-            <li><%= data.secondLanguage %></li>
-            <li><%= data.thirdLanguage %></li>
-            <li><%= data.fourthLanguage %></li>
+            <li>
+                <a href="/">tshirt designer</a>
+            </li>
+            <li>
+                <a href="/search">vul je code in</a>
+            </li>
         </ul>
-    </article>
-    <p>Kopieer de code: <%= data.pin %></p>
-    <p>Of bookmark de url</p>
-    <a class="btn" href="/form/<%= data._id %>">Aanpassen</a>
-    <a class="btn" href="">Print</a>
-    <a class="btn btn--order" href="">Bestellen</a>
+    </nav>
+    <main>
+        <section class="container">
+            <div>
+                <img src="/img/shirt.png" alt="Een <%= data.color %> tshirt, met <%= data.textColor %> tekst.">
+            </div>
+            <article>
+                <p>Je hebt gekozen voor een <%= data.type %> tshirt in de maat <%= data.size %>.
+                    Het is een <%= data.color %> tshirt, met <%= data.textColor %> tekst. Waarop staat</p>
+                <h1>I speak</h1>
+                <ul>
+                    <li><%= data.firstLanguage %></li>
+                    <li><%= data.secondLanguage %></li>
+                    <li><%= data.thirdLanguage %></li>
+                    <li><%= data.fourthLanguage %></li>
+                </ul>
+                <footer>
+                    <p>Kopieer de code: <%= data.pin %></p>
+                    <p>Of bookmark de url</p>
+                    <a class="btn" href="/form/<%= data._id %>">Aanpassen</a>
+                    <a class="btn" href="">Print</a>
+                    <a class="btn btn--order" href="">Bestellen</a>
+                </footer>
+            </article>
+        </section>
+    </main>
 </body>
 </html>

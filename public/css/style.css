@@ -4,7 +4,40 @@ body {
     margin: 0;
 }
 
+nav {
+    background-color: #fff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+nav ul {
+    margin: 0;
+    padding: 0 2em;
+    display: block;
+    display: flex;
+    justify-content: flex-start;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 16px;
+    padding: 1em;
+    list-style: none;
+}
+
+nav ul li:last-child {
+    margin-left: auto;
+}
+
+main {
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+}
+
 h1 {
+    font-size: 2em;
     text-align: center;
 }
 
@@ -14,82 +47,51 @@ img {
     z-index: -1;
 }
 
+/* ------------------------------------------------------
+ *  Buttons
+ * ------------------------------------------------------ */
+
 button {
-    background-color: #38B2AC;
+    background-color: #4C51BF;
     border-radius: 2px;
+    border: none;
     color: #E6FFFA;
     font-size: 1em;
     padding: 0.625em 1em;
+    float: right;
 }
 
 .btn {
-    border: 2px solid #38B2AC;
+    border: 2px solid #4A5568;
     border-radius: 2px;
-    color: #38B2AC;
+    color: #4A5568;
     font-size: 1em;
     padding: 0.625em 1em;
     text-decoration: none;
 }
 
 .btn.btn--order {
-    background-color: #38B2AC;
+    background-color: #4C51BF;
+    border-color: #4C51BF;
     border-radius: 2px;
-    color: #E6FFFA;
+    color: #E6FFFA; 
     font-size: 1em;
     padding: 0.625em 1em;
     text-decoration: none;
 }
 
-form section {
-    position: relative;
-    width: 45%;
-}
-
-form section:first-of-type::before {
-    content: '';
-    width: 42.4%;
-    height: 0;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 0 100px 60px 100px;
-    border-color: transparent transparent #fff transparent;
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -58.4px;
-}
-
-form section:first-of-type {
-    background-color: #fff;
-    border-radius: 2px;
-    float: left;
-    width: 30%;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-form section:last-of-type {
-    float: right;
-    position: relative;
-}
-
-form section:last-of-type fieldset {
-    margin: 6em auto;
-    width: 50%;
-}
-
-form section:last-of-type fieldset label {
-    margin: 0 auto;
-    width: 50%;
-}
-
-form section:last-of-type label {
-    display: block;
-}
-
+/* ------------------------------------------------------
+ *  Form 
+ * ------------------------------------------------------ */
 form {
     margin: 0 auto;
     width: 80%;
+}
+
+form legend {
+    font-weight: 600;
+    margin-bottom: 16px;
+    margin-bottom: 1em;
 }
 
 form fieldset {
@@ -107,22 +109,94 @@ form label input {
     padding: .625em;
 }
 
-form label input {
-    display: block;
+form section {
+    position: relative;
+    width: 50%;
+}
+
+/* ------------------------------------------------------
+ *  Form | shirt
+ * ------------------------------------------------------ */
+
+form section:last-of-type {
+    float: right;
     position: relative;
 }
 
-form label input[type="radio"] {
+form section:last-of-type fieldset {
+    margin: 6em auto 2em;
+    width: 50%;
+}
+
+form section:last-of-type fieldset label {
+    margin: 0 auto;
+    width: 50%;
+}
+
+form section:last-of-type label {
+    display: block;
+}
+
+/* ------------------------------------------------------
+ *  Form | clothes tag
+ * ------------------------------------------------------ */
+
+/* form section:first-of-type::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0 160px 60px 160px;
+    border-width: 0 12.5em 4em 12.5em;
+    border-color: transparent transparent #fff transparent;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -60px;
+    top: -3.95em;
+} */
+
+form section:first-of-type {
+    background-color: #fff;
+    border-radius: 2px;
+    float: left;
+    width: 320px;
+    width: 25em;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    height: 40em;
+    overflow-x: scroll;
+}
+
+/* ------------------------------------------------------
+ *  Form | colors
+ * ------------------------------------------------------ */
+
+form fieldset:nth-of-type(3) input[type="radio"],
+form fieldset:nth-of-type(4) input[type="radio"] {
     margin: 1em auto;
+    position: relative;
     width: 3em;
 }
 
-form label input:before {
+form fieldset:nth-of-type(3) label,
+form fieldset:nth-of-type(4) label {
+    text-align: center;
+    vertical-align: top;
+    width: 4em;
+}
+
+/* ------------------------------------------------------
+ *  Form | colors checkbox
+ * ------------------------------------------------------ */
+
+form fieldset:nth-of-type(3) input:before,
+form fieldset:nth-of-type(4) input:before {
     content: '';    
     border-radius: 2px;
     display: block;
     height: 3em;
-    /* left: -1.5em; */
     position: absolute;
     top: -1.5em;
     width: 3em;
@@ -158,34 +232,18 @@ form label #dark-grey-shirt:before {
     background-color: #2D3748;
 }
 
-form label #red:focus:before,
-form label #red-shirt:focus:before {
-    box-shadow: 0 0 0 3px rgba(56,178,172,.5)!important;
+/* ------------------------------------------------------
+ *  Focus Input
+ * ------------------------------------------------------ */
+
+form label input:focus {
+    box-shadow: 0 0 0 3px rgba(76, 81, 191, .5)!important;
+    outline: none;
 }
 
-form label #orange:focus:before,
-form label #orange-shirt:focus:before {
-    box-shadow: 0 0 0 3px rgba(56,178,172,.5)!important;
-}
-
-form label #yellow:focus:before,
-form label #yellow-shirt:focus:before {
-    box-shadow: 0 0 0 3px rgba(56,178,172,.5)!important;
-}
-
-form label #green:focus:before,
-form label #green-shirt:focus:before {   
-    box-shadow: 0 0 0 3px rgba(56,178,172,.5)!important;
-}
-
-form label #blue:focus:before,
-form label #blue-shirt:focus:before {  
-    box-shadow: 0 0 0 3px rgba(56,178,172,.5)!important;
-}
-
-form label #dark-grey:focus:before,
-form label #dark-grey-shirt:focus:before {
-    box-shadow: 0 0 0 3px rgba(56,178,172,.5)!important;
+form label input:focus:before,
+form label input:focus:before {
+    box-shadow: 0 0 0 3px rgba(76, 81, 191, .5)!important;
 }
 
 form label input[type="text"],
@@ -195,4 +253,70 @@ form label input[type="range"] {
 
 form label input[type="range"] {
     padding: 1em;
+}
+
+/* ------------------------------------------------------
+ *  Search
+ * ------------------------------------------------------ */
+.search-container {
+    margin: 10em 0;
+}
+
+.search {
+    width: 50%;
+}
+
+.search label {
+    padding: 0;
+    margin: 1em;
+    width: 80%;
+    box-sizing: border-box;
+}
+
+.search label input {
+    box-sizing: border-box;
+    border: 0;
+    padding: 1em;
+    margin: 0;
+    margin-top: 1em;
+    width: 100%;
+    float: left;
+}
+
+.search button {
+    box-sizing: border-box;
+    float: none;
+    margin: 1em 0;
+    vertical-align: bottom;
+}
+
+/* ------------------------------------------------------
+ *  Detail
+ * ------------------------------------------------------ */
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.container h1 {
+    text-align: left;
+}
+
+.container div {
+    position: relative;
+}
+
+.container div,
+.container article {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 2em;
+    float: left;
+    width: 50%;
+}
+
+.container div img {
+    position: relative;
+    width: 100%;
 }

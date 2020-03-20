@@ -78,7 +78,7 @@ app
     })
     .post('/form/:id', function (req, res){
         const id = req.params.id;
-		db.collection('designs').update({
+		db.collection('designs').updateOne({
             _id: mongo.ObjectID(id)},
                 { $set: {
                     type: req.body.type,
