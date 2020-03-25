@@ -1,0 +1,89 @@
+<% if (typeof formValues != "undefined"){ %>
+<h1>Ontwerp je T-Shirt</h1>
+<form action="/form/<% if (typeof data != "undefined"){ %><%= data._id %><%}%>" method="POST">
+    <section>
+        <fieldset>
+            <legend>Wat voor shirt wil je?</legend>
+            <% formValues.gender.forEach(gender => { %>
+                <label for="<%= gender %>">
+                    <input type="radio" id="<%= gender %>" name="type" value="<%= gender %>">
+                    <%= gender %> shirt
+                </label>
+            <% }) %>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Wat is je maat?</legend>
+            <label for="size">Kies een kledingsmaat</label>
+            
+            <select name="sizes" id="sizes">
+                <% formValues.sizes.forEach(size => { %>
+                    <option value="<%= size %>" name="<%= size %>"><%= size %></option>
+                <% }) %>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Wat voor kleur shirt wil je?</legend>
+            <% formValues.shirtColors.forEach(colors => { %>
+                <label for="<%= colors.name %>">
+                    <input type="radio" id="<%= colors.name %>" name="color" value="<%= colors.name %>">
+                    <%= colors.nerdy %> shirt
+                </label>
+            <% }) %>
+        </fieldset>
+        <fieldset>
+            <legend>Wat voor kleur tekst wil je?</legend>
+            <% formValues.textColors.forEach(colors => { %>
+                <label for="<%= colors.name %>">
+                    <input type="radio" id="<%= colors.name %>" name="textColors" value="<%= colors.name %>">
+                    <%= colors.nerdy %> shirt
+                </label>
+            <% }) %>
+        </fieldset>
+    </section>
+    <section>
+        <%- include ("shirt.ejs") %>
+        <fieldset>
+            <legend>Wat voor programmeertaal spreek je?</legend>
+            
+            <label for="first-language">
+                Eerste Taal
+                <input type="text" id="first-language" name="firstLanguage" value="<% if (typeof formValues != "undefined"){ %><%= formValues.firstLanguage %><% } %>">
+            </label>
+            <!-- <label for="firstLanguageRange">
+                    Hoe goed spreek je de taal in percentage.
+                    <input type="range" name="firstLanguageRange" value="">
+                </label> -->
+
+            <label for="second-language">
+                Tweede Taal
+                <input type="text" id="second-language" name="secondLanguage" value="<% if (typeof formValues != "undefined"){ %><%= formValues.secondLanguage %><% } %>">
+            </label>
+            <!-- <label for="secondLanguageRange">
+                    Hoe goed spreek je de taal in percentage.
+                    <input type="range" name="secondLanguageRange" value="">
+                </label> -->
+
+            <label for="third-language">
+                Derde Taal
+                <input type="text" id="third-language" name="thirdLanguage" value="<% if (typeof formValues != "undefined"){ %><%= formValues.thirdLanguage %><% } %>">
+            </label>
+            <!-- <label for="thirdLanguageRange">
+                    Hoe goed spreek je de taal in percentage.
+                    <input type="range" name="thirdLanguageRange" value="">
+                </label> -->
+
+            <label for="fourth-language">
+                Vierde Taal
+                <input type="text" id="fourth-language" name="fourthLanguage" value="<% if (typeof formValues != "undefined"){ %><%= formValues.fourthLanguage %><% } %>">
+            </label>
+            <!-- <label for="fourthLanguageRange">
+                    Hoe goed spreek je de taal in percentage.
+                    <input type="range" name="fourthLanguageRange" value="">
+                </label> -->
+        </fieldset>
+        <button>Opslaan</button>
+    </section>
+</form>
+<% } %>

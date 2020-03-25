@@ -46,7 +46,7 @@ h1 {
     text-align: center;
 }
 
-img {
+svg {
     position: absolute;
     width: 100%;
     z-index: -1;

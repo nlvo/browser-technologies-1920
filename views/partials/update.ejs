@@ -1,0 +1,80 @@
+<% if (typeof data != "undefined"){ %>
+<h1>Ontwerp je T-Shirt</h1>
+<form action="/form/<% if (typeof data != "undefined"){ %><%= data._id %><%}%>" method="POST">
+    <section>
+        <fieldset>
+            <legend>Wat voor shirt wil je?</legend>
+            <% data.design.forEach(design => { %>
+                <% design.gender.forEach(gender => { %>
+                    <label for="<%= gender %>">
+                        <input type="radio" id="<%= gender %>" name="type" value="<%= gender %>" <% if (data.type == gender) { %> checked <% } %>>
+                        <%= gender %> shirt
+                    </label>                        
+                <% }) %>
+            <% }) %>
+        </fieldset>
+
+        <fieldset>
+            <legend>Wat is je maat?</legend>
+            <label for="size">Kies een kledingsmaat</label>
+            <select name="size" id="size">
+            <% data.design.forEach(design => { %>
+                <% design.sizes.forEach(size => { %>
+                    <option value="<%= size %>" name="<%= size %>" <% if (data.size == size) { %> selected <% } %>><%= size %></option>
+                <% }) %>
+            <% }) %>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Wat voor kleur shirt wil je?</legend>
+            <% data.design.forEach(design => { %>
+                <% design.shirtColors.forEach(colors => { %>
+                    <label for="<%= colors.name %>">
+                        <input type="radio" id="<%= colors.name %>" name="color" value="<%= colors.nerdy %>" <% if (data.color == colors.nerdy) { %> checked <% } %>>
+                        <%= colors.nerdy %> shirt
+                    </label>
+                <% }) %>
+            <% }) %>
+        </fieldset>
+        <fieldset>
+            <legend>Wat voor kleur tekst wil je?</legend>
+            <% data.design.forEach(design => { %>
+                <% design.textColors.forEach(colors => { %>
+                    <label for="<%= colors.name %>">
+                        <input type="radio" id="<%= colors.name %>" name="textColor" value="<%= colors.nerdy %>" <% if (data.textColor == colors.nerdy) { %> checked <% } %>>
+                        <%= colors.nerdy %> shirt
+                    </label>
+                <% }) %>
+            <% }) %>
+        </fieldset>
+    </section>
+    <section>
+        <%- include ("shirt.ejs") %>
+        <fieldset>
+            <legend>Wat voor programmeertaal spreek je?</legend>
+            
+            <label for="first-language">
+                Eerste Taal
+                <input type="text" id="first-language" name="firstLanguage" value="<%= data.firstLanguage %>">
+            </label>
+
+            <label for="second-language">
+                Tweede Taal
+                <input type="text" id="second-language" name="secondLanguage" value="<%= data.secondLanguage %>">
+            </label>
+
+
+            <label for="third-language">
+                Derde Taal
+                <input type="text" id="third-language" name="thirdLanguage" value="<%= data.thirdLanguage %>">
+            </label>
+
+            <label for="fourth-language">
+                Vierde Taal
+                <input type="text" id="fourth-language" name="fourthLanguage" value="<%= data.fourthLanguage %>">
+            </label>
+        </fieldset>
+        <button>Opslaan</button>
+    </section>
+</form>
+<% } %>
