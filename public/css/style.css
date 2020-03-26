@@ -112,7 +112,6 @@ form label {
 
 form label input {
     margin: 1em 0;
-    padding: .625em;
 }
 
 form section {
@@ -181,9 +180,11 @@ form section:first-of-type {
 
 form fieldset:nth-of-type(3) input[type="radio"],
 form fieldset:nth-of-type(4) input[type="radio"] {
-    margin: 1em auto;
+    margin: 0;
     position: relative;
-    width: 3em;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 form fieldset:nth-of-type(3) label,
@@ -199,56 +200,107 @@ form fieldset:nth-of-type(4) label {
 
 form fieldset:nth-of-type(3) input:before,
 form fieldset:nth-of-type(4) input:before {
-    content: '';    
+    content: '';
     border-radius: 2px;
     display: block;
-    height: 3em;
-    position: absolute;
-    top: -1.5em;
-    width: 3em;
+    height: 2em;
+    height: calc(4em / 2);
+    line-height: 2em;
+    line-height: calc(4em / 2);
+    text-align: center;
+    width: 100%;
 }
 
-form label #red:before,
+form fieldset:nth-of-type(3) input:before {
+    height: 6em;
+}
+
+form fieldset:nth-of-type(3) input[type="radio"]{
+    margin-bottom: 1em;
+}
+
+form fieldset:nth-of-type(4) input[type="radio"]{
+    font-size: 2em;
+    margin-bottom: .5em;
+}
+
+form fieldset:nth-of-type(4) input:before {
+    content: 'Aa';    
+    background-color: #1A202C;
+}
+
+form label #white-shirt:before {
+    background-color: #ffffff;
+    border: 1px solid #718096;
+}
+
 form label #red-shirt:before {
     background-color: #F56565;
 }
 
-form label #orange:before,
 form label #orange-shirt:before {
     background-color: #ED8936;
 }
 
-form label #yellow:before,
 form label #yellow-shirt:before {
     background-color: #ECC94B;
 }
 
-form label #green:before,
 form label #green-shirt:before {   
     background-color: #48BB78;
 }
 
-form label #blue:before,
 form label #blue-shirt:before {  
     background-color: #4299E1;
 }
 
-form label #dark-grey:before,
 form label #dark-grey-shirt:before {
     background-color: #2D3748;
+}
+
+form label #white:before {
+    color: #ffffff;
+}
+
+form label #red:before {
+    color: #F56565;
+}
+
+form label #orange:before {
+    color: #ED8936;
+}
+
+form label #yellow:before {
+    color: #ECC94B;
+}
+
+form label #green:before {   
+    color: #48BB78;
+}
+
+form label #blue:before {  
+    color: #4299E1;
+}
+
+form label #dark-grey:before {
+    background-color: #E2E8F0;
+    border: 1px solid #718096;
+    color: #2D3748;
 }
 
 /* ------------------------------------------------------
  *  Focus Input
  * ------------------------------------------------------ */
 
-form label input:focus {
+:focus{
+    border-radius: 2px;
     box-shadow: 0 0 0 3px rgba(76, 81, 191, .5)!important;
     outline: none;
 }
 
 form label input:focus:before,
 form label input:focus:before {
+    border-radius: 2px;
     box-shadow: 0 0 0 3px rgba(76, 81, 191, .5)!important;
 }
 

@@ -17,7 +17,7 @@
             <legend>Wat is je maat?</legend>
             <label for="size">Kies een kledingsmaat</label>
             
-            <select name="sizes" id="sizes">
+            <select name="size" id="size">
                 <% formValues.sizes.forEach(size => { %>
                     <option value="<%= size %>" name="<%= size %>"><%= size %></option>
                 <% }) %>
@@ -37,7 +37,7 @@
             <% formValues.textColors.forEach(colors => { %>
                 <label for="<%= colors.name %>">
                     <input type="radio" id="<%= colors.name %>" name="textColors" value="<%= colors.name %>">
-                    <%= colors.nerdy %> shirt
+                    <%= colors.nerdy %> tekst
                 </label>
             <% }) %>
         </fieldset>
