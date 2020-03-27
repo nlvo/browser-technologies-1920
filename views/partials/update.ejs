@@ -1,6 +1,7 @@
 <% if (typeof data != "undefined"){ %>
 <h1>Ontwerp je T-Shirt</h1>
 <form action="/form/<% if (typeof data != "undefined"){ %><%= data._id %><%}%>" method="POST">
+    <input type="hidden" name="pin" value="<%= data.pin %>">
     <section>
         <fieldset>
             <legend>Wat voor shirt wil je?</legend>

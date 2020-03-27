@@ -17,7 +17,7 @@ const hexColors = [{
         hex: '#F56565'
     },
     {
-        name: "html oranj",
+        name: "html oranje",
         hex: '#ED8936'
     },
     {
@@ -123,10 +123,10 @@ app
         db.collection('shirts').insertOne({
             pin: Number(pinNumber),
             design: mongo.ObjectId('5e7b8463c88f83844c9bf891'),
-            type: req.body.type || '',
-            size: req.body.size || '',
-            color: hexColors.find((colors) => colors.name == req.body.color ? colors.hex : '') || '',
-            textColor: hexColors.find((colors) => colors.name == req.body.textColor ? colors.hex : '') || '',
+            type: req.body.type ? req.body.type : '',
+            size: req.body.size ? req.body.size : '',
+            color: req.body.color ? hexColors.find((colors) => colors.hex == req.body.color ? colors : '') : '',
+            textColor: req.body.textColor ? hexColors.find((colors) => colors.name == req.body.textColor ? colors : '') : '',
             firstLanguage: req.body.firstLanguage,
             secondLanguage: req.body.secondLanguage,
             thirdLanguage: req.body.thirdLanguage,
@@ -141,14 +141,19 @@ app
     })
     .post('/form/:id', function (req, res) {
         const id = req.params.id;
+        const pinNumber = generateUniqueId({
+            length: 6,
+            useLetters: false
+        });
         db.collection('shirts').updateOne({
             _id: mongo.ObjectId(id)
         }, {
             $set: {
-                type: req.body.type || '',
-                size: req.body.size || '',
-                color: hexColors.find((colors) => colors.name == req.body.color) || '',
-                textColor: hexColors.find((colors) => colors.name == req.body.textColor) || '',
+                pin: req.body.pin || Number(pinNumber),
+                type: req.body.type ? req.body.type : '',
+                size: req.body.size ? req.body.size : '',
+                color: req.body.color ? hexColors.find((colors) => colors.name == req.body.color ? colors.hex : '') : '',
+                textColor: req.body.textColor ? hexColors.find((colors) => colors.name == req.body.textColor ? colors.hex : '') : '',
                 firstLanguage: req.body.firstLanguage,
                 secondLanguage: req.body.secondLanguage,
                 thirdLanguage: req.body.thirdLanguage,
@@ -159,6 +164,7 @@ app
         }, done);
 
         function done(error, result) {
+            console.log(result.type)
             if (error) return console.log(error);
             res.redirect('/design/' + id)
         }

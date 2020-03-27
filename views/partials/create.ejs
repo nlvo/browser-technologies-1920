@@ -28,8 +28,10 @@
         <fieldset>
             <legend>Wat voor kleur shirt wil je?</legend>
             <% formValues.shirtColors.forEach(colors => { %>
+                <% console.log(colors.hex) %>
+
                 <label for="<%= colors.name %>">
-                    <input type="radio" id="<%= colors.name %>" name="color" value="<%= colors.name %>">
+                    <input type="radio" id="<%= colors.name %>" name="color" value="<%= colors.hex %>">
                     <span class="<%= colors.name %>"></span>
                     <%= colors.nerdy %> shirt
                 </label>
@@ -39,7 +41,7 @@
             <legend>Wat voor kleur tekst wil je?</legend>
             <% formValues.textColors.forEach(colors => { %>
                 <label for="<%= colors.name %>">
-                    <input type="radio" id="<%= colors.name %>" name="textColors" value="<%= colors.name %>">
+                    <input type="radio" id="<%= colors.name %>" name="textColors" value="<%= colors.hex %>">
                     <span class="<%= colors.name %>"></span>
                     <%= colors.nerdy %> tekst
                 </label>
