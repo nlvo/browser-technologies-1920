@@ -108,6 +108,19 @@ form fieldset {
 form label {
     display: inline-block;
     padding: .625em;
+    text-align: center;
+}
+
+form label span {
+    display: block;
+    margin-bottom: 1em;
+}
+
+form label span:before {
+    content: '';
+    background-size: cover;
+    margin: 0 auto;
+    display: block;
 }
 
 form label input {
@@ -117,6 +130,15 @@ form label input {
 form section {
     position: relative;
     width: 50%;
+}
+
+form fieldset input[type="radio"] {
+    margin: 0;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 0;
 }
 
 /* ------------------------------------------------------
@@ -175,21 +197,60 @@ form section:first-of-type {
 }
 
 /* ------------------------------------------------------
+ *  Form | type
+ * ------------------------------------------------------ */
+
+form fieldset:first-of-type span:before{
+    height: 1.4em;
+    width: 1.4em;
+}
+
+form fieldset:first-of-type .mannen:before {
+    background-image: url('/img/icons/men-line.svg'); 
+}
+
+form fieldset:first-of-type .vrouwen:before {
+    background-image: url('/img/icons/women-line.svg'); 
+}
+
+/* ------------------------------------------------------
+ *  Form | size
+ * ------------------------------------------------------ */
+
+form fieldset:nth-of-type(2) span:before {
+    background-image: url('/img/icons/t-shirt-2-fill.svg');
+}
+
+form label .xs:before {
+    height: 1em;
+    width: 1em;
+}
+
+form label .s:before {
+    height: 1.4em;
+    width: 1.4em;
+}
+
+form label .m:before {
+    height: 1.8em;
+    width: 1.8em;
+}
+
+form label .l:before {
+    height: 2em;
+    width: 2em;
+}
+
+form label .xl:before {
+    height: 2.4em;
+    width: 2.4em;
+}
+/* ------------------------------------------------------
  *  Form | colors
  * ------------------------------------------------------ */
 
-form fieldset:nth-of-type(3) input[type="radio"],
-form fieldset:nth-of-type(4) input[type="radio"] {
-    margin: 0;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
 form fieldset:nth-of-type(3) label,
 form fieldset:nth-of-type(4) label {
-    text-align: center;
     vertical-align: top;
     width: 4em;
 }
@@ -198,93 +259,105 @@ form fieldset:nth-of-type(4) label {
  *  Form | colors checkbox
  * ------------------------------------------------------ */
 
-form fieldset:nth-of-type(3) input:before,
-form fieldset:nth-of-type(4) input:before {
-    content: '';
+form fieldset:nth-of-type(3) label span,
+form fieldset:nth-of-type(4) label span {
     border-radius: 2px;
-    display: block;
-    height: 2em;
-    height: calc(4em / 2);
     line-height: 2em;
     line-height: calc(4em / 2);
     text-align: center;
     width: 100%;
 }
 
-form fieldset:nth-of-type(3) input:before {
-    height: 6em;
+form fieldset:nth-of-type(3) label span:before {
+    height: 2em;
+    height: calc(4em / 2);
+    width: 50%;
+    margin: 0 auto;
 }
 
-form fieldset:nth-of-type(3) input[type="radio"]{
-    margin-bottom: 1em;
+@supports (mask: url('')) {
+    form fieldset:nth-of-type(3) label:focus-within span,
+    form fieldset:nth-of-type(3) label input:focus + span {
+        border-radius: 2px;
+        box-shadow: 0 0 0 3px rgba(76, 81, 191, .5)!important;
+    }
+
+    form fieldset:nth-of-type(3) label span:before {
+        content: '';
+        mask: url('/img/icons/t-shirt-2-fill.svg');
+        -webkit-mask: url('/img/icons/t-shirt-2-fill.svg');
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+        mask-size: contain;
+        -webkit-mask-size: contain;
+        display: inline-block;
+    }
 }
 
-form fieldset:nth-of-type(4) input[type="radio"]{
-    font-size: 2em;
-    margin-bottom: .5em;
-}
-
-form fieldset:nth-of-type(4) input:before {
-    content: 'Aa';    
-    background-color: #1A202C;
-}
-
-form label #white-shirt:before {
+form label .white-shirt:before {
     background-color: #ffffff;
     border: 1px solid #718096;
 }
 
-form label #red-shirt:before {
+form label .red-shirt:before {
     background-color: #F56565;
 }
 
-form label #orange-shirt:before {
+form label .orange-shirt:before {
     background-color: #ED8936;
 }
 
-form label #yellow-shirt:before {
+form label .yellow-shirt:before {
     background-color: #ECC94B;
 }
 
-form label #green-shirt:before {   
+form label .green-shirt:before {
     background-color: #48BB78;
 }
 
-form label #blue-shirt:before {  
+form label .blue-shirt:before {
     background-color: #4299E1;
 }
 
-form label #dark-grey-shirt:before {
+form label .dark-grey-shirt:before {
     background-color: #2D3748;
 }
 
-form label #white:before {
-    color: #ffffff;
+form fieldset:nth-of-type(4) span:before{
+    content: 'Aa';
+    border-radius: 2px;
+    background-color: #ffffff;
+    border: 1px solid #718096;
+    padding: .625em;
 }
 
-form label #red:before {
+form label span.white:before {
+    color: #ffffff;
+    background-color: #4A5568;
+    border-color: #1A202C;
+}
+
+form label .red:before {
     color: #F56565;
 }
 
-form label #orange:before {
+form label .orange:before {
     color: #ED8936;
 }
 
-form label #yellow:before {
+form label .yellow:before {
     color: #ECC94B;
 }
 
-form label #green:before {   
+form label .green:before {
     color: #48BB78;
 }
 
-form label #blue:before {  
+form label .blue:before {
     color: #4299E1;
 }
 
-form label #dark-grey:before {
-    background-color: #E2E8F0;
-    border: 1px solid #718096;
+form label .dark-grey:before {
     color: #2D3748;
 }
 
@@ -298,8 +371,8 @@ form label #dark-grey:before {
     outline: none;
 }
 
-form label input:focus:before,
-form label input:focus:before {
+form label:focus-within span:before,
+form label input:focus + span:before {
     border-radius: 2px;
     box-shadow: 0 0 0 3px rgba(76, 81, 191, .5)!important;
 }

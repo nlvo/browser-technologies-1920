@@ -8,6 +8,7 @@
                 <% design.gender.forEach(gender => { %>
                     <label for="<%= gender %>">
                         <input type="radio" id="<%= gender %>" name="type" value="<%= gender %>" <% if (data.type == gender) { %> checked <% } %>>
+                        <span class="<%= gender %>"></span>
                         <%= gender %> shirt
                     </label>                        
                 <% }) %>
@@ -16,14 +17,15 @@
 
         <fieldset>
             <legend>Wat is je maat?</legend>
-            <label for="size">Kies een kledingsmaat</label>
-            <select name="size" id="size">
-            <% data.design.forEach(design => { %>
-                <% design.sizes.forEach(size => { %>
-                    <option value="<%= size %>" name="<%= size %>" <% if (data.size == size) { %> selected <% } %>><%= size %></option>
+            <% data.design.forEach(designs => { %>
+                <% designs.sizes.forEach(size => { %>
+                    <label for="<%= size %>">
+                        <input type="radio" id="<%= size %>" name="size" value="<%= size %>">
+                        <span class="<%= size %>"></span>
+                        <%= size %>
+                    </label>
                 <% }) %>
             <% }) %>
-            </select>
         </fieldset>
         <fieldset>
             <legend>Wat voor kleur shirt wil je?</legend>
@@ -31,6 +33,7 @@
                 <% design.shirtColors.forEach(colors => { %>
                     <label for="<%= colors.name %>">
                         <input type="radio" id="<%= colors.name %>" name="color" value="<%= colors.nerdy %>" <% if (data.color == colors.nerdy) { %> checked <% } %>>
+                        <span class="<%= colors.name %>"></span>
                         <%= colors.nerdy %> shirt
                     </label>
                 <% }) %>
@@ -42,6 +45,7 @@
                 <% design.textColors.forEach(colors => { %>
                     <label for="<%= colors.name %>">
                         <input type="radio" id="<%= colors.name %>" name="textColor" value="<%= colors.nerdy %>" <% if (data.textColor == colors.nerdy) { %> checked <% } %>>
+                        <span class="<%= colors.name %>"></span>
                         <%= colors.nerdy %> shirt
                     </label>
                 <% }) %>

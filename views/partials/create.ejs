@@ -7,6 +7,7 @@
             <% formValues.gender.forEach(gender => { %>
                 <label for="<%= gender %>">
                     <input type="radio" id="<%= gender %>" name="type" value="<%= gender %>">
+                    <span class="<%= gender %>"></span>
                     <%= gender %> shirt
                 </label>
             <% }) %>
@@ -15,19 +16,21 @@
 
         <fieldset>
             <legend>Wat is je maat?</legend>
-            <label for="size">Kies een kledingsmaat</label>
-            
-            <select name="size" id="size">
-                <% formValues.sizes.forEach(size => { %>
-                    <option value="<%= size %>" name="<%= size %>"><%= size %></option>
-                <% }) %>
-            </select>
+            <% formValues.sizes.forEach(size => { %>
+                <label for="<%= size %>">
+                    <input type="radio" id="<%= size %>" name="size" value="<%= size %>">
+                    <span class="<%= size %>"></span>
+                    <%= size %>
+                </label>
+            <% }) %>
+
         </fieldset>
         <fieldset>
             <legend>Wat voor kleur shirt wil je?</legend>
             <% formValues.shirtColors.forEach(colors => { %>
                 <label for="<%= colors.name %>">
                     <input type="radio" id="<%= colors.name %>" name="color" value="<%= colors.name %>">
+                    <span class="<%= colors.name %>"></span>
                     <%= colors.nerdy %> shirt
                 </label>
             <% }) %>
@@ -37,6 +40,7 @@
             <% formValues.textColors.forEach(colors => { %>
                 <label for="<%= colors.name %>">
                     <input type="radio" id="<%= colors.name %>" name="textColors" value="<%= colors.name %>">
+                    <span class="<%= colors.name %>"></span>
                     <%= colors.nerdy %> tekst
                 </label>
             <% }) %>
