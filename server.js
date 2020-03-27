@@ -123,10 +123,10 @@ app
         db.collection('shirts').insertOne({
             pin: Number(pinNumber),
             design: mongo.ObjectId('5e7b8463c88f83844c9bf891'),
-            type: req.body.type,
-            size: req.body.size,
-            color: hexColors.find((colors) => colors.name == req.body.color ? colors.hex : ''),
-            textColor: hexColors.find((colors) => colors.name == req.body.textColor ? colors.hex : ''),
+            type: req.body.type || '',
+            size: req.body.size || '',
+            color: hexColors.find((colors) => colors.name == req.body.color ? colors.hex : '') || '',
+            textColor: hexColors.find((colors) => colors.name == req.body.textColor ? colors.hex : '') || '',
             firstLanguage: req.body.firstLanguage,
             secondLanguage: req.body.secondLanguage,
             thirdLanguage: req.body.thirdLanguage,
@@ -145,10 +145,10 @@ app
             _id: mongo.ObjectId(id)
         }, {
             $set: {
-                type: req.body.type,
-                size: req.body.size,
-                color: hexColors.find((colors) => colors.name == req.body.color),
-                textColor: hexColors.find((colors) => colors.name == req.body.textColor),
+                type: req.body.type || '',
+                size: req.body.size || '',
+                color: hexColors.find((colors) => colors.name == req.body.color) || '',
+                textColor: hexColors.find((colors) => colors.name == req.body.textColor) || '',
                 firstLanguage: req.body.firstLanguage,
                 secondLanguage: req.body.secondLanguage,
                 thirdLanguage: req.body.thirdLanguage,
