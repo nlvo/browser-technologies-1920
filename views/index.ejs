@@ -7,7 +7,10 @@
     <article>
         <p>Heb je al een shirt ontworpen of wil je een nieuw shirt ontwerpen? </p>
         <a class="btn" href="/search">Verder ontwerpen</a>
-        <a class="btn btn--order" href="/design">Shirt ontwerpen</a>
+
+        <form action="/design" method="POST">
+            <button class="btn btn--order">Shirt ontwerpen</button>
+        </form>
     </article>
 </section>
 <%- include ("partials/footer.ejs") %>

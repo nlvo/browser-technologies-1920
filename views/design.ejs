@@ -5,7 +5,7 @@
     </div>
     <article>
         <p>Je hebt gekozen voor een <%= data.type %> tshirt in de maat <%= data.size %>.
-            Het is een <% if (data.color){ %> <%= data.color.name %> <% } %> tshirt, met <% if (data.textColor ){ %> <%= data.textColor.name %> <% } %> tekst. Waarop staat</p>
+            Het is een <% if (data.color){ %> <%= data.color.nerdy %> <% } %> tshirt, met <% if (data.textColor ){ %> <%= data.textColor.name %> <% } %> tekst. Waarop staat</p>
         <h1>I speak</h1>
         <ul>
             <li><%= data.firstLanguage %></li>
@@ -16,7 +16,7 @@
         <footer>
             <p>Kopieer de code: <%= data.pin %></p>
             <p>Of bookmark de url</p>
-            <a class="btn" href="/form/<%= data._id %>">Aanpassen</a>
+            <a class="btn" href="/form/edit/<%= data._id %>">Aanpassen</a>
             <a class="btn" href="">Print</a>
             <a class="btn btn--order" href="">Bestellen</a>
         </footer>

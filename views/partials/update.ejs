@@ -1,63 +1,71 @@
 <% if (typeof data != "undefined"){ %>
+
 <h1>Ontwerp je T-Shirt</h1>
-<form action="/form/<% if (typeof data != "undefined"){ %><%= data._id %><%}%>" method="POST">
-    <input type="hidden" name="pin" value="<%= data.pin %>">
+<form id="update-form" action="/form/<% if (typeof data != "undefined"){ %><%= data._id %><%}%>" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="hidden_id" value="<% if (typeof data != "undefined"){ %><%= data._id %><%}%>">
     <section>
         <fieldset>
             <legend>Wat voor shirt wil je?</legend>
-            <% data.design.forEach(design => { %>
-                <% design.gender.forEach(gender => { %>
-                    <label for="<%= gender %>">
-                        <input type="radio" id="<%= gender %>" name="type" value="<%= gender %>" <% if (data.type == gender) { %> checked <% } %>>
-                        <span class="<%= gender %>"></span>
-                        <%= gender %> shirt
-                    </label>                        
-                <% }) %>
+
+            <% console.log('data', data) %>
+            <% data.design.gender.forEach(gender => { %>
+
+            <label for="<%= gender %>">
+                <input type="radio" id="<%= gender %>" name="type" value="<%= gender %>"
+                    <% if (data.type == gender) { %> checked <% } %>>
+                <span class="<%= gender %>"></span>
+                <%= gender %> shirt
+            </label>
+
             <% }) %>
         </fieldset>
 
         <fieldset>
             <legend>Wat is je maat?</legend>
-            <% data.design.forEach(designs => { %>
-                <% designs.sizes.forEach(size => { %>
-                    <label for="<%= size %>">
-                        <input type="radio" id="<%= size %>" name="size" value="<%= size %>">
-                        <span class="<%= size %>"></span>
-                        <%= size %>
-                    </label>
-                <% }) %>
+            <% data.design.sizes.forEach(size => { %>
+
+            <label for="<%= size %>">
+                <input type="radio" id="<%= size %>" name="size" value="<%= size %>" <% if (data.size == size) { %>
+                    checked <% } %>>
+                <span class="<%= size %>"></span>
+                <%= size %>
+            </label>
+
             <% }) %>
         </fieldset>
         <fieldset>
             <legend>Wat voor kleur shirt wil je?</legend>
-            <% data.design.forEach(design => { %>
-                <% design.shirtColors.forEach(colors => { %>
-                    <label for="<%= colors.name %>">
-                        <input type="radio" id="<%= colors.name %>" name="color" value="<%= colors.nerdy %>" <% if (data.color == colors.nerdy) { %> checked <% } %>>
-                        <span class="<%= colors.name %>"></span>
-                        <%= colors.nerdy %> shirt
-                    </label>
-                <% }) %>
+            <% data.design.shirtColors.forEach(colors => { %>
+
+            <label for="<%= colors.name %>">
+                <input type="radio" id="<%= colors.name %>" name="color" value="<%= colors.name %>">
+                <% if (data.color == colors.name) { %> checked <% } %>
+                <span class="<%= colors.name %>"></span>
+                <%= colors.nerdy %> shirt
+            </label>
+
             <% }) %>
         </fieldset>
         <fieldset>
             <legend>Wat voor kleur tekst wil je?</legend>
-            <% data.design.forEach(design => { %>
-                <% design.textColors.forEach(colors => { %>
-                    <label for="<%= colors.name %>">
-                        <input type="radio" id="<%= colors.name %>" name="textColor" value="<%= colors.nerdy %>" <% if (data.textColor == colors.nerdy) { %> checked <% } %>>
-                        <span class="<%= colors.name %>"></span>
-                        <%= colors.nerdy %> shirt
-                    </label>
-                <% }) %>
+            <% console.log('data', data.color) %>
+
+            <% data.design.textColors.forEach(colors => { %>
+            <label for="<%= colors.name %>">
+                <input type="radio" id="<%= colors.name %>" name="textColor" value="<%= colors.name %>"
+                    <% if (data.textColor == colors.name) { %> checked <% } %>>
+                <span class="<%= colors.name %>"></span>
+                <%= colors.nerdy %> shirt
+            </label>
+
             <% }) %>
         </fieldset>
     </section>
-    <section>
+    <section id="shirt-container">
         <%- include ("shirt.ejs") %>
         <fieldset>
             <legend>Wat voor programmeertaal spreek je?</legend>
-            
+
             <label for="first-language">
                 Eerste Taal
                 <input type="text" id="first-language" name="firstLanguage" value="<%= data.firstLanguage %>">
@@ -79,7 +87,7 @@
                 <input type="text" id="fourth-language" name="fourthLanguage" value="<%= data.fourthLanguage %>">
             </label>
         </fieldset>
-        <button>Opslaan</button>
+        <button class="save">Opslaan</button>
     </section>
 </form>
 <% } %>
