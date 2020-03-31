@@ -328,4 +328,19 @@ app
         }
     })
 
+    .get('/order/:id', function (req, res) {
+        const id = req.params.id;
+        db.collection('shirts').findOne({
+            _id: mongo.ObjectID(id)
+        }, done);
+
+        function done(error, result) {
+            // console.log(result)
+            if (error) return console.log(error);
+            res.render('order', {
+                data: result
+            })
+        }
+    })
+
     .listen(port);

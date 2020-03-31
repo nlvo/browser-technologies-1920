@@ -1,51 +1,50 @@
-
-
 const form = document.querySelector('#update-form');
 const shirtContainer = document.querySelector('#shirt-container');
 const shirtContainerText = document.querySelector('#shirt-container fieldset');
 const shirtSvg = document.querySelector('svg');
 const shirtAccent = document.querySelector('#accent-color');
 const shirtBackground = document.querySelector('#shirt-bg');
-const h1 = document.querySelector('h1');
+const shirtBackgroundColor = document.querySelector('fieldset:last-child');
+const btn = document.querySelector('.btn--save');
+const print = document.querySelector('.btn--print');
+const inputShirtType = document.querySelectorAll('[name="type"]');
+const inputShirtSize = document.querySelectorAll('[name="size"]');
+const inputColor = document.querySelectorAll('[name="color"]');
+const inputTextColor = document.querySelectorAll('[name="textColor"]');
 
-function shirtColor(data) {
-
-    if (shirtAccent.classList.length>0) {
+function shirtColor() {
+    if (shirtAccent.classList.length > 0) {
         shirtAccent.className.baseVal = '';
         shirtBackground.className.baseVal = '';
     }
-    shirtAccent.className.baseVal = data.color.name;
-    shirtBackground.className.baseVal = data.color.name;
-
+    shirtAccent.className.baseVal = this.id;
+    shirtBackground.className.baseVal = this.id;
+    shirtBackgroundColor.className = this.id;
 }
 
-function shirtSize(data) {
+function shirtSize() {
     if (shirtSvg.classList.length > 0) {
         shirtSvg.className.baseVal = '';
     } 
-    shirtSvg.className.baseVal = data.size;
+    shirtSvg.className.baseVal = this.id;
 }
 
-function shirtType(data) {
+function shirtType() {
     if (shirtContainer.classList.length > 0) {
         shirtContainer.className = '';
     }
-    shirtContainer.className = data.type;
+    shirtContainer.className = this.id;
 }
 
-function shirtText(data) {
+function shirtText() {
     if (shirtContainerText.classList.length > 0) {
         shirtContainerText.className = '';
     }         
-    shirtContainerText.classList.add(data.textColor.name);
+    shirtContainerText.className = this.id;
 }
 
 function request() {
     const data = JSON.parse(this.responseText);
-    shirtColor(data);
-    shirtSize(data);
-    shirtType(data);
-    shirtText(data);
     // alert(data)
     // console.log('datareq', data);
 }
@@ -63,12 +62,37 @@ function sendData() {
     xhttp.send(formData);
 }
 
-form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    sendData();
-});
+for(i = 0; i < inputShirtType.length; i++) {
+    inputShirtType[i].addEventListener('change', shirtType);
+}
 
-// input.addEventListener("change", function (event) {
-//     event.preventDefault();
-//     sendData();
-// });
+for(i = 0; i < inputShirtSize.length; i++) {
+    inputShirtSize[i].addEventListener('change', shirtSize);
+}
+
+for(i = 0; i < inputColor.length; i++) {
+    inputColor[i].addEventListener('change', shirtColor);
+}
+
+for(i = 0; i < inputTextColor.length; i++) {
+    inputTextColor[i].addEventListener('change', shirtText);
+}
+
+if(btn) {
+    btn.addEventListener('click', function() {
+        form.submit();
+    });
+}
+
+if(form) {
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        sendData();
+    });
+}
+
+if(print) {
+    print.addEventListener('click', function() {
+        window.print();
+    });
+}

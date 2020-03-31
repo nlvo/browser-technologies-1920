@@ -1,29 +1,26 @@
 <%- include ("partials/nav.ejs") %>
-<section class="container design">
-    <article class="<%= data.textColor.name %>">
+<section class="container">
+    <div>
         <%- include ("partials/shirt.ejs") %>
-        <div>
-            <h1>I speak</h1>
-            <ul>
-                <li><%= data.firstLanguage %></li>
-                <li><%= data.secondLanguage %></li>
-                <li><%= data.thirdLanguage %></li>
-                <li><%= data.fourthLanguage %></li>
-            </ul>
-        </div>
-    </article>
+    </div>
     <article>
         <p>Je hebt gekozen voor een <%= data.type %> tshirt in de maat <%= data.size %>.
             Het is een <% if (data.color){ %> <%= data.color.nerdy %> <% } %> tshirt, met <% if (data.textColor ){ %> <%= data.textColor.name %> <% } %> tekst. Waarop staat</p>
+        <h1>I speak</h1>
+        <ul>
+            <li><%= data.firstLanguage %></li>
+            <li><%= data.secondLanguage %></li>
+            <li><%= data.thirdLanguage %></li>
+            <li><%= data.fourthLanguage %></li>
+        </ul>
         <footer>
             <p>Kopieer de code: <%= data.pin %></p>
             <label>
                 Of bookmark deze url:
                 <input type="text" value="https://shirt-designer.herokuapp.com/form/edit/<%= data._id %>">
             </label>
-            
             <a class="btn" href="/form/edit/<%= data._id %>">Aanpassen</a>
-            <button class="btn--print">Print</button>
+            <a class="btn--print">Print</a>
         </footer>
     </article>
 </section>

@@ -1,12 +1,10 @@
 <% if (typeof data != "undefined"){ %>
 
-<h1>Ontwerp je T-Shirt</h1>
 <form id="update-form" action="/form/<% if (typeof data != "undefined"){ %><%= data._id %><%}%>" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="hidden_id" value="<% if (typeof data != "undefined"){ %><%= data._id %><%}%>">
     <section>
         <fieldset>
             <legend>Wat voor shirt wil je?</legend>
-
             <% console.log('data', data) %>
             <% data.design.gender.forEach(gender => { %>
 
@@ -14,7 +12,7 @@
                 <input type="radio" id="<%= gender %>" name="type" value="<%= gender %>"
                     <% if (data.type == gender) { %> checked <% } %>>
                 <span class="<%= gender %>"></span>
-                <%= gender %> shirt
+                <span><%= gender %> shirt</span>
             </label>
 
             <% }) %>
@@ -28,7 +26,7 @@
                 <input type="radio" id="<%= size %>" name="size" value="<%= size %>" <% if (data.size == size) { %>
                     checked <% } %>>
                 <span class="<%= size %>"></span>
-                <%= size %>
+                <span><%= size %></span>
             </label>
 
             <% }) %>
@@ -38,24 +36,22 @@
             <% data.design.shirtColors.forEach(colors => { %>
 
             <label for="<%= colors.name %>">
-                <input type="radio" id="<%= colors.name %>" name="color" value="<%= colors.name %>">
-                <% if (data.color == colors.name) { %> checked <% } %>
+                <input type="radio" id="<%= colors.name %>" name="color" value="<%= colors.name %>" <% if (data.color.name == colors.name) { %> checked <% } %>>
                 <span class="<%= colors.name %>"></span>
-                <%= colors.nerdy %> shirt
+                <span><%= colors.nerdy %> shirt </span>
             </label>
 
             <% }) %>
         </fieldset>
-        <fieldset>
+        <fieldset class="<%= data.color.name %>">
             <legend>Wat voor kleur tekst wil je?</legend>
-            <% console.log('data', data.color) %>
+            <% console.log('dataiii', data.textColor) %>
 
             <% data.design.textColors.forEach(colors => { %>
             <label for="<%= colors.name %>">
-                <input type="radio" id="<%= colors.name %>" name="textColor" value="<%= colors.name %>"
-                    <% if (data.textColor == colors.name) { %> checked <% } %>>
+                <input type="radio" id="<%= colors.name %>" name="textColor" value="<%= colors.name %>"<% if (data.textColor.name == colors.name) { %> checked <% } %>>
                 <span class="<%= colors.name %>"></span>
-                <%= colors.nerdy %> shirt
+                <span><%= colors.nerdy %> shirt </span>
             </label>
 
             <% }) %>
@@ -63,31 +59,30 @@
     </section>
     <section id="shirt-container">
         <%- include ("shirt.ejs") %>
-        <fieldset>
+        <fieldset class="<%= data.textColor.name %>">
             <legend>Wat voor programmeertaal spreek je?</legend>
 
             <label for="first-language">
-                Eerste Taal
+                <span>Eerste Taal</span>
                 <input type="text" id="first-language" name="firstLanguage" value="<%= data.firstLanguage %>">
             </label>
 
             <label for="second-language">
-                Tweede Taal
+                <span>Tweede Taal</span>
                 <input type="text" id="second-language" name="secondLanguage" value="<%= data.secondLanguage %>">
             </label>
 
 
             <label for="third-language">
-                Derde Taal
+                <span>Derde Taal</span>
                 <input type="text" id="third-language" name="thirdLanguage" value="<%= data.thirdLanguage %>">
             </label>
 
             <label for="fourth-language">
-                Vierde Taal
+                <span>Vierde Taal</span>
                 <input type="text" id="fourth-language" name="fourthLanguage" value="<%= data.fourthLanguage %>">
             </label>
         </fieldset>
-        <button class="save">Opslaan</button>
     </section>
 </form>
 <% } %>

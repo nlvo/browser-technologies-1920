@@ -1,0 +1,786 @@
+body {
+    background-color: #CBD5E0;
+    color: #1A202C;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+nav ul {
+    margin: 0;
+    padding: .625em 0;
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+}
+
+nav ul li {
+    padding: 10px;
+    padding: .625em;
+    list-style: none;
+}
+
+nav ul li:first-of-type a:first-child {
+    color: #434190;
+    font-weight: 600;
+}
+
+nav ul li:first-child {
+    margin-right: auto;
+}
+
+nav input {
+    border: none;
+    padding: .625em;
+}
+
+main {
+    position: relative;
+}
+
+h1 {
+    font-size: 1.6em;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #4C51BF;
+}
+
+a:active {
+    color: #3C366B;
+}
+
+svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: -1;
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+article form {
+    display: inline-block;
+    width: auto;
+}
+/* ------------------------------------------------------
+ *  Buttons
+ * ------------------------------------------------------ */
+
+button {
+    background-color: #4C51BF;
+    border-radius: 2px;
+    border: none;
+    color: #E6FFFA;
+    font-size: 1em;
+    padding: 0.625em 1em;
+}
+
+button:hover {
+    background-color: #434190;
+    cursor: pointer;
+}
+
+.btn {
+    border: 2px solid #4A5568;
+    border-radius: 2px;
+    color: #4A5568;
+    font-size: 1em;
+    padding: 0.625em 1em;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    color: #4C51BF;
+    border-color: #4C51BF;
+}
+
+.btn.btn--order {
+    background-color: #4C51BF;
+    border-color: #4C51BF;
+    border-radius: 2px;
+    color: #E6FFFA; 
+    font-size: 1em;
+    padding: 0.625em 1em;
+    text-decoration: none;
+}
+
+/* ------------------------------------------------------
+ *  Form 
+ * ------------------------------------------------------ */
+
+form {
+    margin: 0 auto;
+    width: 80%;
+}
+
+@supports (display: flex) {
+    form {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+form legend {
+    font-weight: 600;
+    margin-bottom: 16px;
+    margin-bottom: 1em;
+}
+
+form fieldset {
+    margin-top: 2em;
+    border: none;
+}
+
+form label {
+    display: inline-block;
+    padding: .625em;
+    text-align: center;
+}
+
+form label:hover {
+    cursor: pointer;
+}
+
+form label span {
+    display: block;
+}
+
+form label span:before {
+    content: '';
+    background-size: cover;
+    margin: 0 auto;
+    display: block;
+}
+
+form section {
+    position: relative;
+}
+
+form fieldset input[type="radio"] {
+    margin: 0;
+    position: absolute;
+    display: block;
+    opacity: 0;
+}
+
+/* ------------------------------------------------------
+ *  Form | shirt
+ * ------------------------------------------------------ */
+
+form section:nth-of-type(2) {
+    position: relative;
+    width: 100%;
+}
+
+form section:nth-of-type(2) fieldset {
+    width: 100%;
+}
+
+form section:nth-of-type(2) fieldset label {
+    text-align: left;
+    margin: 0 auto;
+    padding: 0;
+    width: 50%;
+}
+
+form section:nth-of-type(2) label {
+    display: block;
+}
+
+form section:nth-of-type(2) label input {
+    margin: 1em 0;
+    width: 100%;
+    padding: 0.25em 0;
+    border: 0;
+    display: block;
+}
+
+form section:nth-of-type(2) label span:before {
+   content: '';
+}
+/* ------------------------------------------------------
+ *  Form | clothes tag
+ * ------------------------------------------------------ */
+
+/* form section:first-of-type::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0 160px 60px 160px;
+    border-width: 0 12.5em 4em 12.5em;
+    border-color: transparent transparent #fff transparent;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -60px;
+    top: -3.95em;
+} */
+
+form section:first-of-type {
+    background-color: #fff;
+    border-radius: 2px;
+    width: 100%;
+    width: 25em;
+    /* overflow-x: scroll; */
+}
+
+/* ------------------------------------------------------
+ *  Form | type
+ * ------------------------------------------------------ */
+
+form section:first-of-type fieldset:first-of-type span:before{
+    height: 1.4em;
+    width: 1.4em;
+}
+
+form fieldset:first-of-type .mannen:before {
+    background-image: url('/img/icons/men-line.svg'); 
+}
+
+form fieldset:first-of-type .vrouwen:before {
+    background-image: url('/img/icons/women-line.svg'); 
+}
+
+/* ------------------------------------------------------
+ *  Form | size
+ * ------------------------------------------------------ */
+
+form fieldset:nth-of-type(2) span:before {
+    background-image: url('/img/icons/t-shirt-2-fill.svg');
+}
+
+form label .xs:before {
+    height: 1em;
+    width: 1em;
+}
+
+form label .s:before {
+    height: 1.4em;
+    width: 1.4em;
+}
+
+form label .m:before {
+    height: 1.8em;
+    width: 1.8em;
+}
+
+form label .l:before {
+    height: 2em;
+    width: 2em;
+}
+
+form label .xl:before {
+    height: 2.4em;
+    width: 2.4em;
+}
+/* ------------------------------------------------------
+ *  Form | colors
+ * ------------------------------------------------------ */
+
+form fieldset:nth-of-type(3) label {
+    border-radius: 1em;
+    vertical-align: top;
+    padding: 0 1em;
+    position: relative;
+}
+
+form fieldset:nth-of-type(3) label span:first-of-type {
+    border-radius: 2px;
+    border-radius: 1.4em;
+    height: 1.4em;
+    width: 1.4em;
+    margin: 0 auto;
+}
+
+form fieldset:nth-of-type(3) label:hover span:last-child,
+form fieldset:nth-of-type(4) label:hover span:last-child {
+    opacity: 1;
+}
+
+/* ------------------------------------------------------
+ *  Form | colors text
+ * ------------------------------------------------------ */
+
+form fieldset:nth-of-type(4) label {
+    position: relative;
+}
+
+form fieldset:nth-of-type(4) label span:last-child,
+form fieldset:nth-of-type(3) label span:last-child {
+    color: #3C366B;
+    position: absolute;
+    opacity: 0;
+    left: -2.6em;
+    right: -2.6em;
+    margin-top: 0.625em;
+    z-index: 1;
+    background-color: #C3DAFE;
+    border-radius: 10px;
+    border-radius: 1em;
+    padding: 0.3em;
+    white-space: nowrap;
+}
+form fieldset:nth-of-type(4) label span:last-child:after,
+form fieldset:nth-of-type(3) label span:last-child:after {
+    content: ' ';
+    display: inline-block;
+}
+
+/* @supports (mask: url('')) {
+    form fieldset:nth-of-type(3) label:focus-within span:first-of-type,
+    form fieldset:nth-of-type(3) label input:focus + span:first-of-type {
+        border-radius: 2px;
+        border-radius: 1.4em;
+        box-shadow: 0 0 0 3px rgba(76, 81, 191, .5)!important;
+    }
+} */
+
+form fieldset:nth-of-type(3) label input:focus + span:first-of-type {
+    border-radius: 2px;
+    border-radius: 1.4em;
+    box-shadow: 0 0 0 3px rgba(76, 81, 191, .5)!important;
+}
+
+form label .white-shirt{
+    background-color: #ffffff;
+    border: 1px solid #718096;
+}
+
+form label .red-shirt{
+    background-color: #F56565;
+}
+
+form label .orange-shirt{
+    background-color: #ED8936;
+}
+
+form label .yellow-shirt{
+    background-color: #ECC94B;
+}
+
+form label .green-shirt{
+    background-color: #48BB78;
+}
+
+form label .blue-shirt{
+    background-color: #4299E1;
+}
+
+form label .dark-grey-shirt{
+    background-color: #2D3748;
+}
+
+form fieldset:nth-of-type(4) span:first-of-type:before{
+    content: 'Aa';
+    border-radius: 2px;
+    background-color: #ffffff;
+    border: 1px solid #718096;
+    padding: .625em;
+}
+
+form fieldset:nth-of-type(4) label span.white:before {
+    color: #ffffff;
+    background-color: #4A5568;
+    border-color: #1A202C;
+}
+
+form label .red:before {
+    color: #F56565;
+}
+
+form label .orange:before {
+    color: #ED8936;
+}
+
+form label .yellow:before {
+    color: #ECC94B;
+}
+
+form label .green:before {
+    color: #48BB78;
+}
+
+form label .blue:before {
+    color: #4299E1;
+}
+
+form label .dark-grey:before {
+    color: #2D3748;
+}
+
+/* ------------------------------------------------------
+ *  Focus Input
+ * ------------------------------------------------------ */
+
+form fieldset:nth-of-type(4).red-shirt label span:before{
+    background-color: #F56565;
+}
+
+form fieldset:nth-of-type(4).orange-shirt label span:before{
+    background-color: #ED8936;
+}
+
+form fieldset:nth-of-type(4).yellow-shirt label span:before{
+    background-color: #ECC94B;
+}
+
+form fieldset:nth-of-type(4).green-shirt label span:before{
+    background-color: #48BB78;
+}
+
+form fieldset:nth-of-type(4).blue-shirt label span:before{
+    background-color: #4299E1;
+}
+
+form fieldset:nth-of-type(4).dark-grey-shirt label span:before{
+    background-color: #2D3748;
+}
+
+/* ------------------------------------------------------
+ *  Focus Input
+ * ------------------------------------------------------ */
+
+:focus{
+    border-radius: 2px;
+    box-shadow: 0 0 0 3px rgba(76, 81, 191, .5);
+    outline: none;
+}
+
+form label input[type="radio"]:checked + span {
+    border-radius: 2px;
+    border: 2px solid #4C51BF;
+}
+
+form fieldset:nth-of-type(3) label input[type="radio"]:checked + span {
+    border-radius: 2px;
+    border-radius: 1.4em;
+    border: 2px solid #4C51BF;
+}
+
+form section:nth-of-type(1) label:focus-within span:first-of-type,
+form section:nth-of-type(1) label input:focus + span:first-of-type {
+    border-radius: 2px;
+    box-shadow: 0 0 0 3px rgba(76, 81, 191, .5);
+}
+
+form label input[type="text"],
+form label input[type="range"] {
+    display: block;
+}
+
+form label input[type="range"] {
+    padding: 1em;
+}
+
+/* ------------------------------------------------------
+ *  Search
+ * ------------------------------------------------------ */
+.search-container {
+    margin: 10em 0;
+}
+
+.search-container h1 {
+    text-align: center;
+}
+
+.search {
+    width: 50%;
+}
+
+.search label {
+    padding: 0;
+    margin: 1em;
+    width: 80%;
+    box-sizing: border-box;
+}
+
+.search label input {
+    box-sizing: border-box;
+    border: 0;
+    padding: 1em;
+    margin: 0;
+    margin-top: 1em;
+    width: 100%;
+    float: left;
+}
+
+.search button {
+    box-sizing: border-box;
+    float: none;
+    margin: 1em 0;
+    vertical-align: bottom;
+}
+
+/* ------------------------------------------------------
+ *  Detail
+ * ------------------------------------------------------ */
+
+.design {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.design h1 {
+    text-align: left;
+}
+
+.design article {
+    position: relative;
+}
+
+.design article {
+    box-sizing: border-box;
+    padding: 2em;
+    float: left;
+    width: 100%;
+}
+
+.design article div {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+
+.design article svg {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.design article label {
+    display: block;
+    margin-bottom: 1em;
+}
+
+.design article input {
+    border: 0;
+    padding: .625em;
+    width: 100%;
+}
+
+/* ------------------------------------------------------
+ *  Shirt
+ * ------------------------------------------------------ */
+
+#shirt-container.mannen {
+    width: 50%;
+}
+
+#shirt-container.vrouwen {
+    width: 40%;
+}
+
+svg {
+    transition: width .5s ease-in-out;
+}
+
+/* ------------------------------------------------------
+ *  Shirt | Sizes
+ * ------------------------------------------------------ */
+
+svg.xs {
+    width: 50%;
+}
+svg.s {
+    width: 60%;
+}
+svg.m {
+    width: 70%;
+}
+svg.l {
+    width: 80%;
+}
+svg.xl {
+    width: 90%;
+}
+
+/* ------------------------------------------------------
+ *  Shirt | colors
+ * ------------------------------------------------------ */
+
+svg .white-shirt {
+    fill: #ffffff;
+    border: 1px solid #718096;
+}
+
+svg .red-shirt {
+    fill: #F56565;
+}
+
+svg .orange-shirt {
+    fill: #ED8936;
+}
+
+svg .yellow-shirt {
+    fill: #ECC94B;
+}
+
+svg .green-shirt {
+    fill: #48BB78;
+}
+
+svg .blue-shirt {
+    fill: #4299E1;
+}
+
+svg .dark-grey-shirt {
+    fill: #2D3748;
+}
+
+/* ------------------------------------------------------
+ *  Shirt | Text colors
+ * ------------------------------------------------------ */
+
+.design article.white,
+fieldset.white {
+    color: #ffffff;
+}
+
+.design article.red,
+fieldset.red {
+    color: #F56565;
+}
+
+.design article.orange,
+fieldset.orange {
+    color: #ED8936;
+}
+
+.design article.yellow,
+fieldset.yellow {
+    color: #ECC94B;
+}
+
+.design article.green,
+fieldset.green {
+    color: #48BB78;
+}
+
+.design article.blue,
+fieldset.blue {
+    color: #4299E1;
+}
+
+.design article.dark-grey,
+fieldset.dark-grey {
+    color: #2D3748;
+}
+
+/* ------------------------------------------------------
+ *  Bottom save
+ * ------------------------------------------------------ */
+form section {
+    width: 80%;
+    margin: 0 auto;
+}
+
+form section button {
+    margin: 0 1em;
+}
+
+@media print {
+    body {
+        background-color: #ffffff;
+    }
+    nav {
+        display: none;
+    }
+    .design {
+        width: 100%;
+    }
+    .design h1 {
+        font-size: 3em;
+    }
+    .design li {
+        font-size: 1.6em;
+    }
+    .design article {
+        width: 100%;
+        float: none;
+    }
+    .design article div {
+        top: 30%;
+        left: 60%;
+    }
+    .design article svg {
+        width: 100%;
+    }
+    article label, article .btn, article button {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    svg {
+        width: 50%;
+    }
+    .design article {
+        width: 50%;
+    }
+    form section:first-of-type {
+        flex: 2;
+    }
+    
+    form section:nth-of-type(2) {
+        flex: 3;
+    }
+
+    form section:nth-of-type(2) fieldset {
+        width: 50%;
+    }
+    
+    @supports (display: flex) {
+        form section:first-of-type {
+            flex: 2;
+        }
+        form section:nth-of-type(2) {
+            flex: 3;
+        }
+    }
+
+    @supports (display: flex) {
+        form section:nth-of-type(2) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+
+    @supports (display: flex) {
+        nav ul {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    @supports (display: flex) {
+        .container h1 {
+            flex-basis: 100%;
+        }
+        .container {
+            flex-wrap: wrap;
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
