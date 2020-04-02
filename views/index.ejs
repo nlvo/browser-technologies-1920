@@ -6,10 +6,16 @@
     </article>
     <article>
         <p>Heb je al een shirt ontworpen of wil je een nieuw shirt ontwerpen? </p>
-        <a class="btn" href="/search">Verder ontwerpen</a>
+        <form action="/pin">
+            <label for="pinNumber">
+                Vul hier je code in
+                <input type="text" name="pinNumber" required>
+            </label>
+            <button class="btn btn--ghost">Verder ontwerpen</button>
+        </form>
 
         <form action="/design" method="POST">
-            <button class="btn btn--order">Shirt ontwerpen</button>
+            <button class="btn btn--order">Nieuw shirt ontwerpen</button>
         </form>
     </article>
 </section>

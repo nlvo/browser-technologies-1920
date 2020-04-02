@@ -167,7 +167,7 @@ app
 
         function done(error, result) {
             if (error) return console.log(error);
-            res.redirect('/design/' + result.insertedId)
+            res.redirect('/form/' + result.insertedId)
             // res.redirect('/design/' + result.insertedId)
             // res.send(result.ops[0])
         }
@@ -182,7 +182,7 @@ app
         function done(error, result) {
             // console.log(result)
             if (error) return console.log(error);
-            res.render('form', {
+            res.render('order', {
                 data: result
             })
         }
@@ -265,15 +265,10 @@ app
 
     .post('/form/:id', upload.none(), function (req, res) {
         const id = req.params.id;
-        const pinNumber = generateUniqueId({
-            length: 6,
-            useLetters: false
-        });
         db.collection('shirts').updateOne({
             _id: mongo.ObjectId(id)
         }, {
             $set: {
-                pin: Number(pinNumber),
                 design: design,
                 type: req.body.type ? req.body.type : '',
                 size: req.body.size ? req.body.size : '',
@@ -307,8 +302,8 @@ app
         function done(error, result) {
             // console.log(result)
             if (error) return console.log(error);
-            res.render('design', {
-                data: result
+            res.render('form', {
+                formdata: result
             })
         }
     })
@@ -323,7 +318,7 @@ app
             // console.log(result)
             if (error) return console.log(error);
             res.render('form', {
-                data: result
+                formdata: result
             })
         }
     })
@@ -338,6 +333,20 @@ app
             // console.log(result)
             if (error) return console.log(error);
             res.render('order', {
+                data: result
+            })
+        }
+    })
+    .get('/order/:id/completed', function (req, res) {
+        const id = req.params.id;
+        db.collection('shirts').findOne({
+            _id: mongo.ObjectID(id)
+        }, done);
+
+        function done(error, result) {
+            // console.log(result)
+            if (error) return console.log(error);
+            res.render('completed', {
                 data: result
             })
         }

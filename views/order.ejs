@@ -1,26 +1,31 @@
-<%- include ("partials/nav.ejs") %>
-<section class="container">
-    <div>
+<%- include ("partials/head.ejs") %>
+<section class="container design">
+    <h1>Bestellingsnummer <%= data.pin %></h1>
+    <article class="<%= data.textColor.name %>">
         <%- include ("partials/shirt.ejs") %>
-    </div>
+        <div>
+            <h1>I speak</h1>
+            <ul>
+                <li><%= data.firstLanguage %></li>
+                <li><%= data.secondLanguage %></li>
+                <li><%= data.thirdLanguage %></li>
+                <li><%= data.fourthLanguage %></li>
+            </ul>
+        </div>
+    </article>
     <article>
         <p>Je hebt gekozen voor een <%= data.type %> tshirt in de maat <%= data.size %>.
             Het is een <% if (data.color){ %> <%= data.color.nerdy %> <% } %> tshirt, met <% if (data.textColor ){ %> <%= data.textColor.name %> <% } %> tekst. Waarop staat</p>
-        <h1>I speak</h1>
-        <ul>
-            <li><%= data.firstLanguage %></li>
-            <li><%= data.secondLanguage %></li>
-            <li><%= data.thirdLanguage %></li>
-            <li><%= data.fourthLanguage %></li>
-        </ul>
         <footer>
-            <p>Kopieer de code: <%= data.pin %></p>
+            <p>Tevreden met het ontwerp? Zo niet pas het ontwerp aan en anders bestellen</p>
+            <label>Kopieer deze pincode: <input type="text" class="text" value="<%= data.pin %>"></label>
+
             <label>
                 Of bookmark deze url:
                 <input type="text" value="https://shirt-designer.herokuapp.com/form/edit/<%= data._id %>">
             </label>
-            <a class="btn" href="/form/edit/<%= data._id %>">Aanpassen</a>
-            <a class="btn--print">Print</a>
+            <a class="btn btn--ghost" href="/form/edit/<%= data._id %>">Verder aanpassen</a>
+            <a class="btn btn--order" href="/order/<%= data._id %>/completed">Bestelling plaatsen</a>
         </footer>
     </article>
 </section>

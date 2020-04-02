@@ -6,6 +6,7 @@ const shirtAccent = document.querySelector('#accent-color');
 const shirtBackground = document.querySelector('#shirt-bg');
 const shirtBackgroundColor = document.querySelector('fieldset:last-child');
 const btn = document.querySelector('.btn--save');
+const preview = document.querySelector('.btn--preview');
 const print = document.querySelector('.btn--print');
 const inputShirtType = document.querySelectorAll('[name="type"]');
 const inputShirtSize = document.querySelectorAll('[name="size"]');
@@ -54,9 +55,9 @@ function sendData() {
     const formData = new FormData(form);
     const id = document.querySelector('[name="hidden_id"]').value;
 
-    // for (let [key, value] of formData.entries()) { 
-    //     console.log(key, value);
-    // }
+    for (let [key, value] of formData.entries()) { 
+        console.log(key, value);
+    }
     xhttp.addEventListener('load', request);
     xhttp.open('POST', `${id}`, true);
     xhttp.send(formData);
@@ -78,12 +79,6 @@ for(i = 0; i < inputTextColor.length; i++) {
     inputTextColor[i].addEventListener('change', shirtText);
 }
 
-if(btn) {
-    btn.addEventListener('click', function() {
-        form.submit();
-    });
-}
-
 if(form) {
     form.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -95,4 +90,8 @@ if(print) {
     print.addEventListener('click', function() {
         window.print();
     });
+}
+
+if(preview) {
+    preview.classList.add('btn--inactive')
 }

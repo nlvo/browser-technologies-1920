@@ -76,21 +76,30 @@ article form {
  *  Buttons
  * ------------------------------------------------------ */
 
-button {
+/* button {
     background-color: #4C51BF;
     border-radius: 2px;
     border: none;
     color: #E6FFFA;
     font-size: 1em;
     padding: 0.625em 1em;
-}
+} */
 
-button:hover {
+/* button:hover {
     background-color: #434190;
     cursor: pointer;
-}
+} */
 
 .btn {
+    border-radius: 2px;
+    font-size: 1em;
+    padding: 0.625em 1em;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn--ghost {
+    background-color: transparent;
     border: 2px solid #4A5568;
     border-radius: 2px;
     color: #4A5568;
@@ -98,14 +107,21 @@ button:hover {
     padding: 0.625em 1em;
     text-decoration: none;
     display: inline-block;
+    transition: all .3s ease-in-out;
 }
 
-.btn:hover {
+.btn--ghost:hover {
     color: #4C51BF;
     border-color: #4C51BF;
+    cursor: pointer;
 }
 
-.btn.btn--order {
+/* .btn:hover {
+    color: #4C51BF;
+    border-color: #4C51BF;
+} */
+
+.btn--order {
     background-color: #4C51BF;
     border-color: #4C51BF;
     border-radius: 2px;
@@ -113,6 +129,17 @@ button:hover {
     font-size: 1em;
     padding: 0.625em 1em;
     text-decoration: none;
+    transition: all .3s ease-in-out;
+}
+
+.btn--order:hover {
+    color: #E6FFFA; 
+    background-color: #434190;
+    cursor: pointer;
+}
+
+.btn--inactive {
+    display: none;
 }
 
 /* ------------------------------------------------------
@@ -304,6 +331,11 @@ form fieldset:nth-of-type(3) label span:first-of-type {
     height: 1.4em;
     width: 1.4em;
     margin: 0 auto;
+}
+
+form fieldset:nth-of-type(3) label span:last-child,
+form fieldset:nth-of-type(4) label span:last-child {
+    transition: all .3s ease-in-out;
 }
 
 form fieldset:nth-of-type(3) label:hover span:last-child,
@@ -598,19 +630,19 @@ svg {
  * ------------------------------------------------------ */
 
 svg.xs {
-    width: 50%;
+    width: 100%;
 }
 svg.s {
-    width: 60%;
+    width: 100%;
 }
 svg.m {
-    width: 70%;
+    width: 100%;
 }
 svg.l {
-    width: 80%;
+    width: 100%;
 }
 svg.xl {
-    width: 90%;
+    width: 100%;
 }
 
 /* ------------------------------------------------------
@@ -731,8 +763,25 @@ form section button {
 
 @media only screen and (min-width: 768px) {
     svg {
+        width: 70%;
+    }
+
+    svg.xs {
         width: 50%;
     }
+    svg.s {
+        width: 60%;
+    }
+    svg.m {
+        width: 70%;
+    }
+    svg.l {
+        width: 80%;
+    }
+    svg.xl {
+        width: 90%;
+    }
+
     .design article {
         width: 50%;
     }
@@ -754,26 +803,17 @@ form section button {
         }
         form section:nth-of-type(2) {
             flex: 3;
-        }
-    }
-
-    @supports (display: flex) {
-        form section:nth-of-type(2) {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
         }
-    }
 
-    @supports (display: flex) {
         nav ul {
             display: flex;
             justify-content: flex-end;
         }
-    }
 
-    @supports (display: flex) {
         .container h1 {
             flex-basis: 100%;
         }
