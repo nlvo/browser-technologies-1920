@@ -230,7 +230,7 @@ app
 
         function done(error, result) {
             if (error) return console.log(error);
-            res.redirect('/design/' + result._id)
+            res.redirect('/form/' + result._id)
         }
     })
 
