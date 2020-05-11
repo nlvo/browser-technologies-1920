@@ -1,6 +1,6 @@
 <%- include ("partials/head.ejs") %>
 <section class="container design">
-    <h1>Bestellingnummer <%= data.pin %> is voldaan!</h1>
+    <h1>Bestellingnummer <%= formdata.pin %> is voldaan!</h1>
     <p>Nog een shirt ontwerpen?</p>
     <form action="/design" method="POST">
         <button class="btn btn--order">Nieuw shirt ontwerpen</button>

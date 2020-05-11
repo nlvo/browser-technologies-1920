@@ -13,7 +13,52 @@ const inputShirtSize = document.querySelectorAll('[name="size"]');
 const inputColor = document.querySelectorAll('[name="color"]');
 const inputTextColor = document.querySelectorAll('[name="textColor"]');
 
+var asyncAwait = function() {
+    try {
+        eval("(function() { async _ => _; })();");
+    } catch (e) {   
+        return false;
+    }
+    return true;
+}();
+// https://stackoverflow.com/questions/48375128/js-how-to-test-for-async-function-support
+
+
+function getData() {
+    if (('fetch' in window)) {
+        const id = document.querySelector('[name="hidden_id"]').value;
+        return fetch(`${window.location.origin}/data/${id}`)
+                .then(response => response.json())
+                .then(data => data.formdata);
+    }
+}
+
+function postData() {
+    if (('fetch' in window)) {
+        const id = document.querySelector('[name="hidden_id"]').value;
+        const formData = new FormData(form);
+
+        return fetch(`${window.location.origin}/form/${id}`, {
+            method: 'post',
+            body: formData,
+        });
+    }
+}
+
+async function shirtColorUpdate() {
+    if(asyncAwait) {
+        await postData();
+        const shirtData = await getData();
+        shirtAccent.style["fill"] = await shirtData.color.hex;
+        shirtBackground.style["fill"] = await shirtData.color.hex;
+        shirtBackgroundColor.className = this.id;
+    }
+}
+
+
+
 function shirtColor() {
+    sendData();    
     if (shirtAccent.classList.length > 0) {
         shirtAccent.className.baseVal = '';
         shirtBackground.className.baseVal = '';
@@ -23,7 +68,10 @@ function shirtColor() {
     shirtBackgroundColor.className = this.id;
 }
 
+
+
 function shirtSize() {
+    sendData();    
     if (shirtSvg.classList.length > 0) {
         shirtSvg.className.baseVal = '';
     } 
@@ -31,6 +79,7 @@ function shirtSize() {
 }
 
 function shirtType() {
+    sendData();    
     if (shirtContainer.classList.length > 0) {
         shirtContainer.className = '';
     }
@@ -38,6 +87,7 @@ function shirtType() {
 }
 
 function shirtText() {
+    sendData();    
     if (shirtContainerText.classList.length > 0) {
         shirtContainerText.className = '';
     }         
@@ -45,9 +95,11 @@ function shirtText() {
 }
 
 function request() {
-    const data = JSON.parse(this.responseText);
+    const data = this.responseText;
+    // const data = JSON.parse(this.responseText);
     // alert(data)
     // console.log('datareq', data);
+    return data
 }
 
 function sendData() {
@@ -72,7 +124,11 @@ for(i = 0; i < inputShirtSize.length; i++) {
 }
 
 for(i = 0; i < inputColor.length; i++) {
-    inputColor[i].addEventListener('change', shirtColor);
+    if(asyncAwait) {
+        inputColor[i].addEventListener('change', shirtColorUpdate);
+    } else {
+        inputColor[i].addEventListener('change', shirtColor);
+    }
 }
 
 for(i = 0; i < inputTextColor.length; i++) {

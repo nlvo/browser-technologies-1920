@@ -308,6 +308,21 @@ app
         }
     })
     
+    .get('/data/:id', function (req, res) {
+        const id = req.params.id;
+        db.collection('shirts').findOne({
+            _id: mongo.ObjectID(id)
+        }, done);
+
+        function done(error, result) {
+            // console.log(result)
+            if (error) return console.log(error);
+            res.json({
+                formdata: result
+            })
+        }
+    })
+    
     .get('/form/edit/:id', upload.none(), function (req, res) {
         const id = req.params.id;
         db.collection('shirts').findOne({
@@ -333,7 +348,7 @@ app
             // console.log(result)
             if (error) return console.log(error);
             res.render('order', {
-                data: result
+                formdata: result
             })
         }
     })
@@ -347,7 +362,7 @@ app
             // console.log(result)
             if (error) return console.log(error);
             res.render('completed', {
-                data: result
+                formdata: result
             })
         }
     })
