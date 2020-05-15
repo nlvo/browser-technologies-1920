@@ -13,28 +13,18 @@ const inputShirtSize = document.querySelectorAll('[name="size"]');
 const inputColor = document.querySelectorAll('[name="color"]');
 const inputTextColor = document.querySelectorAll('[name="textColor"]');
 
-var asyncAwait = function() {
-    try {
-        eval("(function() { async _ => _; })();");
-    } catch (e) {   
-        return false;
-    }
-    return true;
-}();
-// https://stackoverflow.com/questions/48375128/js-how-to-test-for-async-function-support
-
-
-function getData() {
-    if (('fetch' in window)) {
+if (('fetch' in window)) {
+    function getData() {
         const id = document.querySelector('[name="hidden_id"]').value;
         return fetch(`${window.location.origin}/data/${id}`)
                 .then(response => response.json())
                 .then(data => data.formdata);
     }
 }
+//https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api
 
-function postData() {
-    if (('fetch' in window)) {
+if (('fetch' in window)) {
+    function postData() {
         const id = document.querySelector('[name="hidden_id"]').value;
         const formData = new FormData(form);
 
@@ -46,16 +36,20 @@ function postData() {
 }
 
 async function shirtColorUpdate() {
-    if(asyncAwait) {
-        await postData();
-        const shirtData = await getData();
-        shirtAccent.style["fill"] = await shirtData.color.hex;
-        shirtBackground.style["fill"] = await shirtData.color.hex;
-        shirtBackgroundColor.className = this.id;
-    }
+    await postData();
+    const shirtData = await getData();
+    shirtAccent.style["fill"] = await shirtData.color.hex;
+    shirtBackground.style["fill"] = await shirtData.color.hex;
+    shirtBackgroundColor.className = this.id;
 }
 
-
+for(i = 0; i < inputColor.length; i++) {
+    if (('fetch' in window)) {
+        inputColor[i].addEventListener('change', shirtColorUpdate);
+    } else {
+        inputColor[i].addEventListener('change', shirtColor);
+    }
+}
 
 function shirtColor() {
     sendData();    
@@ -121,14 +115,6 @@ for(i = 0; i < inputShirtType.length; i++) {
 
 for(i = 0; i < inputShirtSize.length; i++) {
     inputShirtSize[i].addEventListener('change', shirtSize);
-}
-
-for(i = 0; i < inputColor.length; i++) {
-    if(asyncAwait) {
-        inputColor[i].addEventListener('change', shirtColorUpdate);
-    } else {
-        inputColor[i].addEventListener('change', shirtColor);
-    }
 }
 
 for(i = 0; i < inputTextColor.length; i++) {
