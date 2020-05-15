@@ -12,6 +12,9 @@ const inputShirtType = document.querySelectorAll('[name="type"]');
 const inputShirtSize = document.querySelectorAll('[name="size"]');
 const inputColor = document.querySelectorAll('[name="color"]');
 const inputTextColor = document.querySelectorAll('[name="textColor"]');
+const body = document.querySelector('body');
+
+body.classList.add('js')
 
 if (('fetch' in window)) {
     function getData() {
